@@ -1,0 +1,112 @@
+*{
+margin: 0;
+padding: 0;
+}
+/* body{
+    background-color: #c6cfd7;
+} */
+
+
+.hero {
+    background: url('../IMAGES/pexels-heyho-6312072.jpg') center/cover no-repeat;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+.hero-content p{
+    font-family:sans-serif;
+    color: #919294;
+}
+
+.search-bar {
+    display: flex;
+     
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 10px;
+    border: none;
+    height: 10%;  
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    background: #124076;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    height: 10%;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-bottom:20px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #124076;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-item {
+    font-size: 1.2rem;
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #E3F2FD;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Featured Properties */
+.featured {
+    text-align: center;
+    padding: 50px;
+}
+
+.property-list img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Call to Action */
+.cta {
+    text-align: center;
+    padding: 50px;
+    background: #0A1931;
+    color: #FFFFFF;
+}
+
+.app-buttons img {
+    width: 150px;
+    margin: 10px;
+}
+.card:hover{
+    cursor: pointer;
+    background-color: #e4ba7a;
+    
+ 
+}
