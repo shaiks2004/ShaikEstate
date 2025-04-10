@@ -35,6 +35,7 @@
     font-size: 14px;
     margin-bottom: 8px;
     line-height: 1.6;
+    color: #edece6;
 }
 
 /* Quick Links */
@@ -88,7 +89,9 @@
     border-top: 2px solid rgb(154, 135, 135);
     font-size: 14px;
 }
-
+.footer-bottom p{
+    color: #c0bfb8;
+}
 .footer-bottom a {
     color: #ffffff;
     text-decoration: none;
