@@ -59,15 +59,19 @@
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
+    color: #001f3f;
 }
 
 .feature-box span {
     font-size: 14px;
-    color: #ffffff;
+    color: #000205;
 }
 
 .feature-box:hover {
     transform: scale(1.05);
+     background-color: #c49d62;
+     /* background-color: #ac835d; */
+
 }
 
 /* Footer */
@@ -88,6 +92,7 @@ footer {
     width: 0;
     animation: typing 6s steps(60, end) forwards;
 }
+
 
 .auto-scroll-container {
     width: 100%;
@@ -133,4 +138,75 @@ footer {
 .scroll-card p {
     font-size: 14px;
     color: #333;
+}
+
+hr{
+    width: 80%;
+    height: 3px;
+    background-color: #1c2654;
+    border: none;
+    margin: 20px auto;
+}
+.build-feature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    margin: 50px;
+
+
+}
+.build-feature img{
+    height: 500px;
+}
+.build-feature p{
+    margin-top: 10px;
+    /* padding: 20px; */
+    font-size: 15px;
+}
+.texter{
+font-size: 5px;
+text-align: center;
+}
+.build-feature h1{
+    font-weight: 400;
+    color: #ac835d;
+    /* color:#FFD700; */
+    font-size: 40px;
+    line-height: 1.1428571429em;
+    letter-spacing: .05em;
+    margin: 0;
+    margin: 25px 0;
+}
+
+.offers{
+    height: 380px;
+    background-color: #ffffff;
+    box-shadow: 10px 5px 30px#000205;
+    border-radius: 15px;
+
+    
+}
+.offers h1 ,p{
+    margin-left: 100px;
+}
+.offers-fix{
+    padding: 10px;
+    margin: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    align-items: last baseline;
+}
+.what1{
+
+    background-color: #124076;
+    height: 200px;
+    width: 300px;
+    border-radius: 25px;
+    
 }
