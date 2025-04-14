@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/Features.css">
+    <link rel="stylesheet" href="../CSS/Agents.css">
     <style>
         .agent-card {
             background: white;
@@ -39,56 +40,57 @@
         </nav>
     </header>
 
-    <!-- Our Story Section -->
-    <section class="our-story py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="display-5 mb-4">Our Story</h2>
-                    <p class="lead">Founded in 2010, ShaikEstate has been helping clients find their dream homes with personalized service and expert knowledge of the local market.</p>
-                    <p>Our team of dedicated professionals brings decades of combined experience to ensure you get the best possible real estate service.</p>
-                </div>
-                <div class="col-lg-6">
-                    <img src="../IMAGES/pexels-tima-miroshnichenko-6336640.jpg" alt="Our Story" class="img-fluid rounded shadow">
-                </div>
+<!-- Our Story Section -->
+<section class="our-story py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="display-5 mb-4">Our Story</h2>
+                <p class="lead">Founded in 2010, ShaikEstate has been helping clients find their dream homes with personalized service and expert knowledge of the local market.</p>
+                <p>Our team of dedicated professionals brings decades of combined experience to ensure you get the best possible real estate service.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="../IMAGES/pexels-tima-miroshnichenko-6336640.jpg" alt="Our Story" class="img-fluid rounded shadow img-dime">
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Meet Our Team Section -->
     <section class="meet-team py-5">
         <div class="container text-center">
             <h2 class="mb-5">Meet Our Team</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
+            <div class="row">
+                <div class="team-intro">
                     <p class="lead mb-5">Our team of professionals is dedicated to providing exceptional service and expertise in all aspects of real estate.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-3">
+            <div class="team-grid">
+                <div class="team-member-card">
                     <div class="team-member">
-                        <img src="../IMAGES/Agents.png" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
+                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3">
                         <h4>John Smith</h4>
                         <p class="text-muted">Founder & CEO</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="team-member-card">
                     <div class="team-member">
-                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
+                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3">
                         <h4>Sarah Johnson</h4>
                         <p class="text-muted">Operations Manager</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="team-member-card">
                     <div class="team-member">
-                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
+                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3">
                         <h4>Michael Brown</h4>
                         <p class="text-muted">Marketing Director</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="team-member-card">
                     <div class="team-member">
-                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
+                        <img src="../IMAGES/user.png" alt="Team Member" class="img-fluid rounded-circle mb-3">
                         <h4>Emily Davis</h4>
                         <p class="text-muted">Finance Manager</p>
                     </div>
@@ -101,49 +103,41 @@
     <section class="our-agents py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Our Agents</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="agent-card text-center p-4 h-100 shadow-sm">
-                        <img src="../IMAGES/Agents.png" alt="Agent" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
-                        <h4>Alex Johnson</h4>
-                        <p class="text-muted">Senior Agent</p>
-                        <div class="agent-contact">
-                            <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
-                            <p><i class="fas fa-envelope me-2"></i> a.johnson@example.com</p>
-                        </div>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
+                    <h4>Alex Johnson</h4>
+                    <p class="text-muted">Senior Agent</p>
+                    <div class="agent-contact">
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope me-2"></i> a.johnson@example.com</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="agent-card text-center p-4 h-100 shadow-sm">
-                        <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
-                        <h4>Sarah Williams</h4>
-                        <p class="text-muted">Commercial Specialist</p>
-                        <div class="agent-contact">
-                            <p><i class="fas fa-phone me-2"></i> (123) 456-7891</p>
-                            <p><i class="fas fa-envelope me-2"></i> s.williams@example.com</p>
-                        </div>
+                <div class="agent-card">
+                    <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
+                    <h4>Sarah Williams</h4>
+                    <p class="text-muted">Commercial Specialist</p>
+                    <div class="agent-contact">
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7891</p>
+                        <p><i class="fas fa-envelope me-2"></i> s.williams@example.com</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="agent-card text-center p-4 h-100 shadow-sm">
-                        <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
-                        <h4>Michael Brown</h4>
-                        <p class="text-muted">Residential Expert</p>
-                        <div class="agent-contact">
-                            <p><i class="fas fa-phone me-2"></i> (123) 456-7892</p>
-                            <p><i class="fas fa-envelope me-2"></i> m.brown@example.com</p>
-                        </div>
+                <div class="agent-card">
+                    <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
+                    <h4>Michael Brown</h4>
+                    <p class="text-muted">Residential Expert</p>
+                    <div class="agent-contact">
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7892</p>
+                        <p><i class="fas fa-envelope me-2"></i> m.brown@example.com</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="agent-card text-center p-4 h-100 shadow-sm">
-                        <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
-                        <h4>Emily Davis</h4>
-                        <p class="text-muted">Luxury Properties</p>
-                        <div class="agent-contact">
-                            <p><i class="fas fa-phone me-2"></i> (123) 456-7893</p>
-                            <p><i class="fas fa-envelope me-2"></i> e.davis@example.com</p>
-                        </div>
+                <div class="agent-card">
+                    <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
+                    <h4>Emily Davis</h4>
+                    <p class="text-muted">Luxury Properties</p>
+                    <div class="agent-contact">
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7893</p>
+                        <p><i class="fas fa-envelope me-2"></i> e.davis@example.com</p>
                     </div>
                 </div>
             </div>
@@ -154,27 +148,21 @@
     <section class="experts py-5">
         <div class="container">
             <h2 class="text-center mb-5">Our Experts</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="expert-card p-4 text-center h-100">
-                        <i class="fas fa-home fa-3x mb-3 text-primary"></i>
-                        <h4>Property Valuation</h4>
-                        <p>Accurate market assessments from our certified valuation experts.</p>
-                    </div>
+            <div class="experts-grid">
+                <div class="expert-card">
+                    <i class="fas fa-home fa-3x mb-3 text-primary"></i>
+                    <h4>Property Valuation</h4>
+                    <p>Accurate market assessments from our certified valuation experts.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="expert-card p-4 text-center h-100">
-                        <i class="fas fa-file-contract fa-3x mb-3 text-primary"></i>
-                        <h4>Legal Services</h4>
-                        <p>Complete legal support for all your real estate transactions.</p>
-                    </div>
+                <div class="expert-card">
+                    <i class="fas fa-file-contract fa-3x mb-3 text-primary"></i>
+                    <h4>Legal Services</h4>
+                    <p>Complete legal support for all your real estate transactions.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="expert-card p-4 text-center h-100">
-                        <i class="fas fa-hand-holding-usd fa-3x mb-3 text-primary"></i>
-                        <h4>Mortgage Advice</h4>
-                        <p>Expert guidance to secure the best financing options.</p>
-                    </div>
+                <div class="expert-card">
+                    <i class="fas fa-hand-holding-usd fa-3x mb-3 text-primary"></i>
+                    <h4>Mortgage Advice</h4>
+                    <p>Expert guidance to secure the best financing options.</p>
                 </div>
             </div>
         </div>
