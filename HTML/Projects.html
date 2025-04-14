@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="../CSS/project.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -17,183 +17,195 @@
     <link rel="stylesheet" href="../CSS/footer.css">
 </head>
 
+
+<header class="Mainhead">
+    <nav class="navigator">
+        <a href="#"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
+        <ul class="nav-menu">
+            <li><a href="../HTML/home.html" class="navs">Home</a></li>
+            <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+            <li><a href="./Agents.html" class="navs">Agents</a></li>
+            <li><a href="./Projects.html" class="navs">Projects</a></li>
+            <li><a href="./Projects.html" class="navs">About</a></li>
+            <li><a href="./Contanctus.html" class="navs">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body>
-    <!-- here our header copyied from header.html -->
-    <header class="Mainhead">
-        <nav class="navigator">
-            <a href="#"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
-            <ul class="nav-menu">
-                <li><a href="#" class="navs">Home</a></li>
-                <li><a href="#" class="navs">Features</a></li>
-                <li><a href="#" class="navs">Agents</a></li>
-                <li><a href="#" class="navs">Projects</a></li>
-                <li><a href="#" class="navs">About</a></li>
-                <li><a href="#" class="navs">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- main page goes here -->
-    <section class="projects-section">
-        <div class="container">
-            <h2 class="section-title">OUR PROJECTS</h2>
-            <p class="description">
-                These project details can be customized and expanded upon for each property listing on your real estate website.
-                Providing comprehensive and accurate information helps potential buyers make informed decisions about the properties you have available.
-            </p>
-
-            <div class="project-container">
-                <img src="../IMAGES/feattures2.jpg" alt="Modern Building" class="img-fluid project-image">
-                <div class="project-details">
-                    <h3>RESIDENTIAL FORT'D</h3>
-                    <p class="project-description,info-container">
-                        This visualization project is about the building in the historical center of Omsk City, Russia.
-                        Initially, it was built as a hotel for the 2018 FIFA World Cup, but the project was not completed as supposed.
-                    </p>
-                    <div class="more-info" id="moreInfo">
-                        <p>Here is the extended information about the project, including location, features, and other important details.</p>
-                    </div>
-                    <p><strong>LOCATION:</strong> Andreas Vesaliusstraat 8, Frederik 3000, Leuven, Belgium</p>
-                    <p><strong>PROJECT TYPE:</strong> Residential</p>
-
-                    <p><strong>KEY FEATURES:</strong></p>
-                    <ul>
-                        <li>Prime Location</li>
-                        <li>Spacious Interiors</li>
-                        <li>Luxurious Master Suite</li>
-                    </ul>
-                    <button class="btn" onclick="toggleInfo()">More Information</button>
-                    <!-- <button type="btn btn-dark" onclick="feature1()">More Information</button> -->
-                    <!-- <a href="#" class="btn btn-dark" onclick="toggleInfo()">More Information</a> -->
+    <body>
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="https://belfort.qodeinteractive.com/wp-content/uploads/2023/01/h4-video.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="video-text">
+                <h1>Your Dream Home Awaits</h1>
+                <h3>Explore projects and get a Trail</h3>
+                <a href="#" class="video-btn">Explore Projects</a>
+            </div>
+        </div>
+        
+    <div class="container">
+       
+        <div class="post-item">
+            <a href="#" class="post-item-image" style="background-image: url('../IMAGES/southend-elevation.jpg');"></a>
+            <div class="post-item-info">
+                <a href="#" class="post-item-title">
+                    <h4>Shaik-House</h4>
+                </a>
+                <div class="post-item-date">
+                    <strong>160 Units</strong>
+                </div>
+                <div class="post-item-date">
+                    <strong>Town Apartments</strong>
+                </div>
+                <div class="post-item-date">
+                    Location: Renigunta Road, Tirupati
+                </div>
+                <div class="view-more">
+                    <li>
+                        <a href="../HTML/Projects.html" class="view-more-btn">
+                            View More Features <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </li>
                 </div>
             </div>
         </div>
-
-        <!-- second projecct -->
-    </section>
-    <section class="projects-section">
-        <div class="container">
-         
-
-            <div class="project-container">
-                <img src="../IMAGES/feature5.jpg" alt="Modern Building" class="img-fluid project-image">
-                <div class="project-details">
-                    <h3>RESIDENTIAL FORT'D</h3>
-                    <p class="project-description">
-                        This visualization project is about the building in the historical center of Omsk City, Russia.
-                        Initially, it was built as a hotel for the 2018 FIFA World Cup, but the project was not completed as supposed.
-                    </p>
-
-                    <p><strong>LOCATION:</strong> Andreas Vesaliusstraat 8, Frederik 3000, Leuven, Belgium</p>
-                    <p><strong>PROJECT TYPE:</strong> Residential</p>
-
-                    <p><strong>KEY FEATURES:</strong></p>
-                    <ul>
-                        <li>Prime Location</li>
-                        <li>Spacious Interiors</li>
-                        <li>Luxurious Master Suite</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-dark" onclick="feature2()">More Information</a>
+        <div class="post-item">
+            <a href="#" class="post-item-image" style="background-image: url('../IMAGES/southend-elevation.jpg');"></a>
+            <div class="post-item-info">
+                <a href="#" class="post-item-title">
+                    <h4>Shaik-House</h4>
+                </a>
+                <div class="post-item-date">
+                    <strong>160 Units</strong>
+                </div>
+                <div class="post-item-date">
+                    <strong>Town Apartments</strong>
+                </div>
+                <div class="post-item-date">
+                    Location: Renigunta Road, Tirupati
+                </div>
+                <div class="view-more">
+                    <li>
+                        <a href="../HTML/Projects.html" class="view-more-btn">
+                            View More Features <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </li>
                 </div>
             </div>
         </div>
-
-        <!-- second projecct -->
-    </section>
-
-
-    <section class="projects-section">
-        <div class="container">
-         
-
-            <div class="project-container">
-                <img src="../IMAGES/feature3.jpg" alt="Modern Building" class="img-fluid project-image">
-                <div class="project-details">
-                    <h3>RESIDENTIAL FORT'D</h3>
-                    <p class="project-description">
-                        This visualization project is about the building in the historical center of Omsk City, Russia.
-                        Initially, it was built as a hotel for the 2018 FIFA World Cup, but the project was not completed as supposed.
-                    </p>
-
-                    <p><strong>LOCATION:</strong> Andreas Vesaliusstraat 8, Frederik 3000, Leuven, Belgium</p>
-                    <p><strong>PROJECT TYPE:</strong> Residential</p>
-
-                    <p><strong>KEY FEATURES:</strong></p>
-                    <ul>
-                        <li>Prime Location</li>
-                        <li>Spacious Interiors</li>
-                        <li>Luxurious Master Suite</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-dark" onclick="feature3()">More Information</a>
+        <div class="post-item">
+            <a href="#" class="post-item-image" style="background-image: url('../IMAGES/southend-elevation.jpg');"></a>
+            <div class="post-item-info">
+                <a href="#" class="post-item-title">
+                    <h4>Shaik-House</h4>
+                </a>
+                <div class="post-item-date">
+                    <strong>160 Units</strong>
+                </div>
+                <div class="post-item-date">
+                    <strong>Town Apartments</strong>
+                </div>
+                <div class="post-item-date">
+                    Location: Renigunta Road, Tirupati
+                </div>
+                <div class="view-more">
+                    <li>
+                        <a href="../HTML/Projects.html" class="view-more-btn">
+                            View More Features <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </li>
                 </div>
             </div>
         </div>
-
-        <!-- third projecct -->
-    </section>
-
-    
-    <section class="projects-section">
-        <div class="container">
-         
-
-            <div class="project-container">
-                <img src="../IMAGES/feature4.jpg" alt="Modern Building" class="img-fluid project-image">
-                <div class="project-details">
-                    <h3>RESIDENTIAL FORT'D</h3>
-                    <p class="project-description">
-                        This visualization project is about the building in the historical center of Omsk City, Russia.
-                        Initially, it was built as a hotel for the 2018 FIFA World Cup, but the project was not completed as supposed.
-                    </p>
-
-                    <p><strong>LOCATION:</strong> Andreas Vesaliusstraat 8, Frederik 3000, Leuven, Belgium</p>
-                    <p><strong>PROJECT TYPE:</strong> Residential</p>
-
-                    <p><strong>KEY FEATURES:</strong></p>
-                    <ul>
-                        <li>Prime Location</li>
-                        <li>Spacious Interiors</li>
-                        <li>Luxurious Master Suite</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-dark" onclick="feature4()">More Information</a>
+        <div class="post-item">
+            <a href="#" class="post-item-image" style="background-image: url('../IMAGES/southend-elevation.jpg');"></a>
+            <div class="post-item-info">
+                <a href="#" class="post-item-title">
+                    <h4>Shaik-House</h4>
+                </a>
+                <div class="post-item-date">
+                    <strong>160 Units</strong>
+                </div>
+                <div class="post-item-date">
+                    <strong>Town Apartments</strong>
+                </div>
+                <div class="post-item-date">
+                    Location: Renigunta Road, Tirupati
+                </div>
+                <div class="view-more">
+                    <li>
+                        <a href="../HTML/Projects.html" class="view-more-btn">
+                            View More Features <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </li>
                 </div>
             </div>
+
         </div>
 
-        <!-- fourth projecct -->
-    </section>
-    
-    
+        <div class="post-item">
+            <a href="#" class="post-item-image" style="background-image: url('../IMAGES/southend-elevation.jpg');"></a>
+            <div class="post-item-info">
+                <a href="#" class="post-item-title">
+                    <h4>Shaik-House</h4>
+                </a>
+                <div class="post-item-date">
+                    <strong>160 Units</strong>
+                </div>
+                <div class="post-item-date">
+                    <strong>Town Apartments</strong>
+                </div>
+                <div class="post-item-date">
+                    Location: Renigunta Road, Tirupati
+                </div>
+            </div>
+            <div class="view-more">
+                <li>
+                    <a href="../HTML/Projects.html" class="view-more-btn">
+                        View More Features <i class="bi bi-arrow-right"></i>
+                    </a>
+                </li>
+            </div>
+        </div>
+        <div class="trail">
+            <section class="trial-cta">
+                <h1>Get a Free Trial on Our Built Projects</h1>
+                <p>Explore our completed properties before you decide. Book a trial visit today!</p>
+                <a href="#" class="trial-btn">Book a Free Trial</a>
+            </section>
+        </div>
+
+    </div>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>About ShaikEstate</h3>
-                <p>We help you find the best properties at the best prices. Whether you're looking for a new home or an investment, we’ve got you covered.</p>
+                <p>We help you find the best properties at the best prices. Whether you're looking for a new home or an
+                    investment, we’ve got you covered.</p>
             </div>
-    
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-              
-                    <li><a href="#" class="navs">Home</a></li>
-                    <li><a href="#" class="navs">Features</a></li>
-                    <li><a href="#" class="navs">Agents</a></li>
-                    <li><a href="#" class="navs">Projects</a></li>
-                    <li><a href="#" class="navs">About</a></li>
-                    <li><a href="#" class="navs">Contact</a></li>
+                    <li><a href="../HTML/home.html" class="navs">Home</a></li>
+                    <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+                    <li><a href="../HTML/Agents.html" class="navs">Agents</a></li>
+                    <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
+                    <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
+                    <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Your City</p>
                 <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
                 <p><i class="fas fa-envelope"></i> info@shaikestate.com</p>
             </div>
-    
+
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
@@ -204,13 +216,11 @@
                 </div>
             </div>
         </div>
-    
         <div class="footer-bottom">
-            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
+                    href="terms.html">Terms & Conditions</a></p>
         </div>
     </footer>
-    <script src="../JavaScript/projects.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
