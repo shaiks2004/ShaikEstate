@@ -2,6 +2,8 @@
 include 'database.php'; // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $image_name = $_FILES["image"]["name"] ? $_FILES["image"]["name"] : $_POST['default_image'];
+    $default_image = $_POST['default_image'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     

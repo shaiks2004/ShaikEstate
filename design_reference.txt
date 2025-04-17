@@ -1,0 +1,63 @@
+# Design Reference for ShaikEstate
+
+## Color Codes
+- Main Color: #ac835d (Used in headings)
+- Background Color: #f5f5f5 (General background)
+- Text Color: #000000 (General text)
+
+## Header
+- Logo: `../IMAGES/logo.png`
+- Navigation Links:
+  - Home
+  - Features
+  - Agents
+  - Projects
+  - About
+  - Contact
+
+## Hero Section
+- Heading: "We help people find their dream house"
+- Subheading: "Search by apartment, location, or price"
+- Search Bar: Input field with a search button.
+
+## Stats Section
+- Stats:
+  - 2+ Years Experience
+  - 60+ Clients
+  - 1.2K Properties Sold
+  - 15 Towns Coverage
+
+## Services Section
+- Service Cards:
+  - Affordable Listings
+  - Verified Properties
+  - Best Customer Support
+  - Owner-to-Buyer Listings
+  - Rent-to-Own Homes
+  - Eco-Friendly Housing
+  - Low Rent
+  - 0% Commission
+  - Exchange
+  - Up to User Radius
+
+## Featured Properties Section
+- Property Cards:
+  - Each card includes an image, title, description, and location.
+
+## Call to Action Section
+- Heading: "So, what are you waiting for?"
+- Subheading: "Get your dream home today with exclusive deals!"
+- Button: "Find Your Home"
+
+## Footer
+- About Section: Description of ShaikEstate.
+- Quick Links: Navigation links similar to the header.
+- Contact Information: Address, phone number, email.
+- Social Media Icons: Facebook, Twitter, Instagram, LinkedIn.
+
+## Functionalities
+- Auto-scrolling features in the services and special town homes sections.
+- Search functionality in the hero section.
+- Dynamic content loading for properties and services.
+
+This reference file will help maintain consistency in design and functionality across the site.

@@ -15,7 +15,9 @@
         <textarea name="description" id="description" required></textarea><br><br>
         
         <label for="image">Select image to upload:</label>
-        <input type="file" name="image" id="image" required><br><br>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <input type="hidden" name="default_image" value="WIN_20250417_10_51_38_Pro.jpg">
+        <br><br>
         
         <input type="submit" value="Upload Image">
     </form>
