@@ -77,13 +77,30 @@
   flex: 1 1 200px;
   max-width: 250px;
 }
+.heading-9
+{
+  color:#bc9c80;
+}
+.no_scoll_width{
+  scroll-behavior: smooth;
+  padding:25px;
+}
+.no_scoll_width::-webkit-scrollbar
+{
+width:0;
+}
 
 /* Agents Grid */
 .agents-grid {
   display: flex;
-  flex-wrap: wrap;
+  /* width: max-content; */
+  flex-wrap:nowrap;
+  overflow-x: scroll;
   justify-content: center;
   gap: 2rem;
+  background: #0c1325;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center;
 }
 
 /* Experts Grid */

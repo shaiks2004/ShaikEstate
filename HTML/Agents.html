@@ -11,14 +11,18 @@
     <link rel="stylesheet" href="../CSS/Features.css">
     <link rel="stylesheet" href="../CSS/Agents.css">
     <style>
+       body {
+            background-color: #f5f5f5; /* Updated background color for the entire page */
+        }
         .agent-card {
-            background: white;
+            background: #fff; /* Updated background color for agent cards */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         .agent-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.05); /* Updated hover effect */
+            background-color: #c49d62; /* Updated hover background color */
         }
         .agent-photo {
             border: 3px solid #f8f9fa;
@@ -56,11 +60,10 @@
     </div>
 </section>
 
-
     <!-- Meet Our Team Section -->
     <section class="meet-team py-5">
         <div class="container text-center">
-            <h2 class="mb-5">Meet Our Team</h2>
+            <h2 class="mb-5 heading-9">Meet Our Team</h2>
             <div class="row">
                 <div class="team-intro">
                     <p class="lead mb-5">Our team of professionals is dedicated to providing exceptional service and expertise in all aspects of real estate.</p>
@@ -100,10 +103,10 @@
     </section>
 
     <!-- Our Agents Section -->
-    <section class="our-agents py-5 bg-light">
+    <section class="our-agents py-5 bg-light ">
         <div class="container">
-            <h2 class="text-center mb-5">Our Agents</h2>
-            <div class="agents-grid">
+            <h2 class="text-center mb-5 heading-9 ">Our Agents</h2>
+            <div class="agents-grid no_scoll_width">
                 <div class="agent-card">
                     <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
                     <h4>Alex Johnson</h4>
@@ -140,6 +143,15 @@
                         <p><i class="fas fa-envelope me-2"></i> e.davis@example.com</p>
                     </div>
                 </div>
+                <div class="agent-card">
+                    <img src="../IMAGES/user.png" alt="Agent" class="img-fluid rounded-circle mb-3">
+                    <h4>Michael Brown</h4>
+                    <p class="text-muted">Residential Expert</p>
+                    <div class="agent-contact">
+                        <p><i class="fas fa-phone me-2"></i> (123) 456-7892</p>
+                        <p><i class="fas fa-envelope me-2"></i> m.brown@example.com</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -147,7 +159,7 @@
     <!-- Experts Section -->
     <section class="experts py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our Experts</h2>
+            <h2 class="text-center mb-5 heading-9">Our Experts</h2>
             <div class="experts-grid">
                 <div class="expert-card">
                     <i class="fas fa-home fa-3x mb-3 text-primary"></i>
@@ -202,6 +214,7 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2025 ShaikEstate. All rights reserved.</p>
         </div>
