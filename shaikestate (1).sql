@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2025 at 09:02 AM
+-- Generation Time: Apr 18, 2025 at 08:39 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,49 +24,71 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
+-- Table structure for table `agent`
 --
-CREATE DATABASE IF NOT EXISTS shaikestate;
 
--- Use the created database
-USE shaikestate;
-
-CREATE TABLE `projects` (
-  `id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `location` varchar(100) DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `agent` (
+  `agent_id` int(11) NOT NULL,
+  `license_number` varchar(50) NOT NULL,
+  `years_experience` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sites`
+-- Table structure for table `property`
 --
 
-CREATE TABLE `sites` (
-  `id` int(11) NOT NULL,
+CREATE TABLE `property` (
+  `property_id` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `price` decimal(12,2) NOT NULL,
+  `bedrooms` int(11) DEFAULT NULL,
+  `bathrooms` int(11) DEFAULT NULL,
+  `area_sqft` int(11) DEFAULT NULL,
+  `property_type` enum('House','Land','Farm','Commercial') NOT NULL,
+  `status` enum('For Sale','Sold') DEFAULT 'For Sale',
+  `town_id` int(11) NOT NULL,
+  `agent_id` int(11) DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `town`
+--
+
+CREATE TABLE `town` (
+  `town_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `state` varchar(50) NOT NULL,
+  `population` int(11) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `Phone_Number` int(10) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `role` enum('Buyer','Seller','Agent') NOT NULL,
+  `profile_picture_url` varchar(255) DEFAULT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -74,44 +96,78 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `projects`
+-- Indexes for table `agent`
 --
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `agent`
+  ADD PRIMARY KEY (`agent_id`),
+  ADD UNIQUE KEY `license_number` (`license_number`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `sites`
+-- Indexes for table `property`
 --
-ALTER TABLE `sites`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `property`
+  ADD PRIMARY KEY (`property_id`),
+  ADD KEY `idx_town` (`town_id`),
+  ADD KEY `idx_agent` (`agent_id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `town`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `town`
+  ADD PRIMARY KEY (`town_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `projects`
+-- AUTO_INCREMENT for table `agent`
 --
-ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `agent`
+  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `sites`
+-- AUTO_INCREMENT for table `property`
 --
-ALTER TABLE `sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `property`
+  MODIFY `property_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `town`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `town`
+  MODIFY `town_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `agent`
+--
+ALTER TABLE `agent`
+  ADD CONSTRAINT `agent_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `property`
+--
+ALTER TABLE `property`
+  ADD CONSTRAINT `property_ibfk_1` FOREIGN KEY (`town_id`) REFERENCES `town` (`town_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `property_ibfk_2` FOREIGN KEY (`agent_id`) REFERENCES `agent` (`agent_id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
