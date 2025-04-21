@@ -1,0 +1,14 @@
+section {
+    margin: 20px 0;
+}
+
+section h2 {
+    color: #D4AF37;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #E3F2FD;
+    color: #124076;
+}

@@ -19,6 +19,7 @@ Tables:
 - area_sqft (int, nullable)
 - property_type (enum: 'House', 'Land', 'Farm', 'Commercial', not null)
 - status (enum: 'For Sale', 'Sold', nullable, default 'For Sale')
+- image_url (varchar(255), nullable) # stores image URL
 - town_id (int, not null, indexed)
 - agent_id (int, nullable, indexed)
 - createdAt (datetime, nullable, default current_timestamp)
