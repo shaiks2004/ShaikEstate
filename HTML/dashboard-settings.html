@@ -34,8 +34,53 @@
             <script>
                 document.getElementById('settings-form').addEventListener('submit', function(event) {
                     event.preventDefault();
-                    // Placeholder for saving settings logic
-                    alert('Settings saved successfully!');
+                    const siteTitle = document.getElementById('site-title').value.trim();
+                    const contactEmail = document.getElementById('contact-email').value.trim();
+                    const themeColor = document.getElementById('theme-color').value;
+
+                    if (!siteTitle || !contactEmail || !themeColor) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+
+                    fetch('../api/save_settings.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            'site_title': siteTitle,
+                            'contact_email': contactEmail,
+                            'theme_color': themeColor
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                        } else {
+                            alert('Error: ' + (data.error || 'Unknown error'));
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error saving settings: ' + error.message);
+                    });
+                });
+
+                // Load current settings on page load
+                window.addEventListener('DOMContentLoaded', () => {
+                    fetch('../api/get_settings.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success && data.settings) {
+                            document.getElementById('site-title').value = data.settings.site_title || '';
+                            document.getElementById('contact-email').value = data.settings.contact_email || '';
+                            document.getElementById('theme-color').value = data.settings.theme_color || '#124076';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading settings:', error);
+                    });
                 });
             </script>
         </div>

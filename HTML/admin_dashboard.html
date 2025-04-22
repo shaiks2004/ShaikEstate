@@ -142,12 +142,23 @@
         <!-- Removed filter input as per user request -->
         <table>
             <thead>
+               
                 <tr>
                     <th>User ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Role</th>
+                    <th style="position: relative;">
+                        Role <i class="fa-solid fa-filter fa-lg filter-icon" onclick="toggleFilterInput('user-role-filter')"></i>
+                        <select id="user-role-filter" data-table-body="user-table-body" data-column-index="4" onchange="filterTableByColumn(this.id, this.getAttribute('data-table-body'), parseInt(this.getAttribute('data-column-index')))" style="display:none; position: absolute; bottom: 100%; left: 0; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; width: 140px; font-family: Arial, sans-serif; font-size: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                            <option value="">All Roles</option>
+                            <option value="Admin">Admin</option>
+                            <!-- <option value="User">User</option> -->
+                            <option value="Agent">Agent</option>
+                            <option value="Buyer">Buyer</option>
+                            <option value="Seller">Seller</option>
+                        </select>
+                    </th>
                 </tr>
             </thead>
             <tbody id="user-table-body">
@@ -157,16 +168,25 @@
     </section>
     <section class="properties-section">
         <h2>Properties</h2>
-        <!-- Removed filter input as per user request -->
         <table>
             <thead>
+            
                 <tr>
                     <th>Property ID</th>
                     <th>Address</th>
                     <th>Price</th>
                     <th>Bedrooms</th>
                     <th>Bathrooms</th>
-                    <th>Type</th>
+                    <th style="position: relative;">
+                        Type <i class="fa-solid fa-filter fa-lg filter-icon" onclick="toggleFilterInput('property-type-filter')"></i>
+                        <select id="property-type-filter" data-table-body="property-table-body" data-column-index="5" onchange="filterTableByColumn(this.id, this.getAttribute('data-table-body'), parseInt(this.getAttribute('data-column-index')))" style="display:none; position: absolute; bottom: 100%; left: 0; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; width: 140px; font-family: Arial, sans-serif; font-size: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                            <option value="">All Types</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="House">House</option>
+                            <option value="Condo">Condo</option>
+                            <option value="Townhouse">Townhouse</option>
+                        </select>
+                    </th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -175,5 +195,35 @@
             </tbody>
         </table>
     </section>
+    <script>
+        function toggleFilterInput(inputId) {
+            const filterElement = document.getElementById(inputId);
+            if (filterElement.style.display === 'none' || filterElement.style.display === '') {
+                filterElement.style.display = 'block';
+                filterElement.focus();
+            } else {
+                filterElement.style.display = 'none';
+                filterElement.value = '';
+                filterTableByColumn(inputId, inputId === 'user-role-filter' ? 'user-table-body' : 'property-table-body', inputId === 'user-role-filter' ? 4 : 5);
+            }
+        }
+
+        function filterTableByColumn(inputId, tableBodyId, columnIndex) {
+            const filterValue = document.getElementById(inputId).value.toLowerCase();
+            const tableBody = document.getElementById(tableBodyId);
+            const rows = tableBody.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const cell = rows[i].getElementsByTagName('td')[columnIndex];
+                if (cell) {
+                    const cellText = cell.textContent || cell.innerText;
+                    if (filterValue === "" || cellText.toLowerCase() === filterValue) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>

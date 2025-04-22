@@ -19,8 +19,11 @@
         <a href="logout.html">Logout</a>
     </nav>
     <main>
+        <div style="display: flex; align-items: center; margin-bottom: 15px; position: relative; max-width: 400px; margin-left: auto; margin-right: auto;">
+            <input type="text" id="user-search-input" placeholder="Search users by any column..." style="flex-grow: 1; padding: 8px 35px 8px 12px; font-size: 16px; border-radius: 6px; border: 1px solid #aaa; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <i class="fa fa-search" aria-hidden="true" style="position: absolute; right: 12px; cursor: pointer; color: #555;"></i>
+        </div>
         <h1>Users List</h1>
-        <!-- Filter input removed as per user request -->
         <table>
             <thead>
                 <tr>
@@ -28,7 +31,17 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Role</th>
+                    <th style="position: relative;">
+                        Role <i class="fa-solid fa-filter fa-lg filter-icon" onclick="toggleFilterInput('user-role-filter')"></i>
+                        <select id="user-role-filter" data-table-body="user-table-body" data-column-index="4" onchange="filterTableByColumn(this.id, this.getAttribute('data-table-body'), parseInt(this.getAttribute('data-column-index')))" style="display:none; position: absolute; bottom: 100%; left: 0; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; width: 140px; font-family: Arial, sans-serif; font-size: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                            <option value="">All Roles</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                            <option value="Agent">Agent</option>
+                            <option value="Buyer">Buyer</option>
+                            <option value="Seller">Seller</option>
+                        </select>
+                    </th>
                 </tr>
             </thead>
             <tbody id="user-table-body">
@@ -60,6 +73,71 @@
             }
         }
         fetchUsers();
+
+        document.getElementById('user-search-input').addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const rows = document.getElementById('user-table-body').getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const rowText = rows[i].textContent.toLowerCase();
+                rows[i].style.display = rowText.includes(filter) ? '' : 'none';
+            }
+        });
+
+        function toggleFilterInput(inputId) {
+            const filterElement = document.getElementById(inputId);
+            if (filterElement.style.display === 'none' || filterElement.style.display === '') {
+                filterElement.style.display = 'block';
+                filterElement.focus();
+            } else {
+                filterElement.style.display = 'none';
+                filterElement.value = '';
+            }
+        }
+
+        function filterTableByColumn(inputId, tableBodyId, columnIndex) {
+            const filterValue = document.getElementById(inputId).value.toLowerCase();
+            const tableBody = document.getElementById(tableBodyId);
+            const rows = tableBody.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const cell = rows[i].getElementsByTagName('td')[columnIndex];
+                if (cell) {
+                    const cellText = cell.textContent || cell.innerText;
+                    if (filterValue === "" || cellText.toLowerCase() === filterValue) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function toggleFilterInput(inputId) {
+            const filterElement = document.getElementById(inputId);
+            if (filterElement.style.display === 'none' || filterElement.style.display === '') {
+                filterElement.style.display = 'block';
+                filterElement.focus();
+            } else {
+                filterElement.style.display = 'none';
+                filterElement.value = '';
+            }
+        }
+
+        function filterTableByColumn(inputId, tableBodyId, columnIndex) {
+            const filterValue = document.getElementById(inputId).value.toLowerCase();
+            const tableBody = document.getElementById(tableBodyId);
+            const rows = tableBody.getElementsByTagName('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const cell = rows[i].getElementsByTagName('td')[columnIndex];
+                if (cell) {
+                    const cellText = cell.textContent || cell.innerText;
+                    if (filterValue === "" || cellText.toLowerCase() === filterValue) {
+                        rows[i].style.display = '';
+                    } else {
+                        rows[i].style.display = 'none';
+                    }
+                }
+            }
+        }
     </script>
 </body>
 </html>
