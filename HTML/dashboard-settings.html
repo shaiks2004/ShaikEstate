@@ -19,8 +19,25 @@
     <main>
         <h1>Settings</h1>
         <div class="content">
-            <p>This is the settings page. You can add configuration options here.</p>
-            <!-- Add settings form or options as needed -->
+            <form id="settings-form">
+                <label for="site-title">Site Title:</label><br />
+                <input type="text" id="site-title" name="site-title" placeholder="Enter site title" /><br /><br />
+                
+                <label for="contact-email">Contact Email:</label><br />
+                <input type="email" id="contact-email" name="contact-email" placeholder="Enter contact email" /><br /><br />
+                
+                <label for="theme-color">Theme Color:</label><br />
+                <input type="color" id="theme-color" name="theme-color" value="#124076" /><br /><br />
+                
+                <button type="submit">Save Settings</button>
+            </form>
+            <script>
+                document.getElementById('settings-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // Placeholder for saving settings logic
+                    alert('Settings saved successfully!');
+                });
+            </script>
         </div>
     </main>
 </body>

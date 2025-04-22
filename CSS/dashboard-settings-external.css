@@ -51,6 +51,56 @@ h1 {
     border-radius: 10px;
     color: #124076;
 }
+
+#settings-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#settings-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #124076;
+}
+
+#settings-form input[type="text"],
+#settings-form input[type="email"],
+#settings-form input[type="color"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #124076;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #124076;
+    background-color: #f5f5f5;
+    transition: border-color 0.3s ease;
+}
+
+#settings-form input[type="text"]:focus,
+#settings-form input[type="email"]:focus,
+#settings-form input[type="color"]:focus {
+    border-color: #D4AF37;
+    outline: none;
+}
+
+#settings-form button {
+    background-color: #124076;
+    color: #D4AF37;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#settings-form button:hover {
+    background-color: #D4AF37;
+    color: #124076;
+}
 @media (max-width: 768px) {
     nav {
         width: 100%;

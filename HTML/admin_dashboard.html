@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../CSS/admin_dashboard.css" />
-    <!-- <link rel="stylesheet" href="../CSS/admin_dashboard_external.css" /> -->
+    <!-- <link rel="stylesheet" href="../CSS/admin_dashboard.css" /> -->
+    <link rel="stylesheet" href="../CSS/admin_dashboard_external.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/e73128bc90.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>Admin Dashboard</header>
@@ -19,26 +21,28 @@
     </nav>
     <main>
         <h1>Welcome, Admin!</h1>
-        <div class="dashboard-widgets" id="dashboard-widgets">
-            <div class="widget">
-                <h3>Total Users</h3>
-                <p id="user-count">Loading...</p>
-            </div>
-            <div class="widget">
-                <h3>Total Properties</h3>
-                <p id="property-count">Loading...</p>
-            </div>
-            <div class="widget">
-                <h3>Total Agents</h3>
-                <p id="agent-count">Loading...</p>
-            </div>
-            <div class="widget">
-                <h3>Total Towns</h3>
-                <p id="town-count">Loading...</p>
+        <div class="dashboard-widgets-container">
+            <div class="dashboard-widgets" id="dashboard-widgets">
+                <div class="widget">
+                    <h3>Total Users</h3>
+                    <p id="user-count">Loading...</p>
+                </div>
+                <div class="widget">
+                    <h3>Total Properties</h3>
+                    <p id="property-count">Loading...</p>
+                </div>
+                <div class="widget">
+                    <h3>Total Agents</h3>
+                    <p id="agent-count">Loading...</p>
+                </div>
+                <div class="widget">
+                    <h3>Total Towns</h3>
+                    <p id="town-count">Loading...</p>
+                </div>
             </div>
         </div>
-    </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JavaScript/admin_dashboard.js"></script>
     <script>
         async function fetchCounts() {
             try {
@@ -133,8 +137,9 @@
         fetchProperties();
         renderCharts();
     </script>
-    <section>
+    <section class="users-section">
         <h2>Users</h2>
+        <!-- Removed filter input as per user request -->
         <table>
             <thead>
                 <tr>
@@ -150,8 +155,9 @@
             </tbody>
         </table>
     </section>
-    <section>
+    <section class="properties-section">
         <h2>Properties</h2>
+        <!-- Removed filter input as per user request -->
         <table>
             <thead>
                 <tr>

@@ -85,6 +85,7 @@ th, td {
     padding: 10px;
     border: 1px solid #ac835d;
     text-align: left;
+    vertical-align: middle;
 }
 th {
     background-color: #D4AF37;
