@@ -4,77 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Dashboard - Settings</title>
-    <link rel="stylesheet" href="../CSS/home.css" />
-    <style>
-        body {
-            background-color: #0A1931;
-            color: #635c5c;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        header {
-            background-color: #124076;
-            color: #D4AF37;
-            padding: 20px;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        nav {
-            width: 220px;
-            background-color: #124076;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding-top: 80px;
-            color: #D4AF37;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-        }
-        nav a {
-            color: #D4AF37;
-            padding: 15px 20px;
-            text-decoration: none;
-            border-bottom: 1px solid #e4ba7a;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #e4ba7a;
-            color: #124076;
-        }
-        main {
-            margin-left: 220px;
-            padding: 30px;
-            max-width: calc(100% - 220px);
-        }
-        h1 {
-            color: #D4AF37;
-            margin-bottom: 30px;
-        }
-        .content {
-            background: #E3F2FD;
-            padding: 20px;
-            border-radius: 10px;
-            color: #124076;
-        }
-        @media (max-width: 768px) {
-            nav {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding-top: 10px;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            main {
-                margin-left: 0;
-                padding: 20px 10px;
-                max-width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/dashboard-settings-external.css" />
 </head>
 <body>
     <header>Admin Dashboard - Settings</header>
@@ -84,13 +14,75 @@
         <a href="dashboard-property.html">Properties</a>
         <a href="dashboard-user.html">Users</a>
         <a href="dashboard-settings.html">Settings</a>
-        <a href="logout.html">Logout</a>
+        <a href="../api/logout.php">Logout</a>
     </nav>
     <main>
         <h1>Settings</h1>
         <div class="content">
-            <p>This is the settings page. You can add configuration options here.</p>
-            <!-- Add settings form or options as needed -->
+            <form id="settings-form">
+                <label for="site-title">Site Title:</label><br />
+                <input type="text" id="site-title" name="site-title" placeholder="Enter site title" /><br /><br />
+                
+                <label for="contact-email">Contact Email:</label><br />
+                <input type="email" id="contact-email" name="contact-email" placeholder="Enter contact email" /><br /><br />
+                
+                <label for="theme-color">Theme Color:</label><br />
+                <input type="color" id="theme-color" name="theme-color" value="#124076" /><br /><br />
+                
+                <button type="submit">Save Settings</button>
+            </form>
+            <script>
+                document.getElementById('settings-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const siteTitle = document.getElementById('site-title').value.trim();
+                    const contactEmail = document.getElementById('contact-email').value.trim();
+                    const themeColor = document.getElementById('theme-color').value;
+
+                    if (!siteTitle || !contactEmail || !themeColor) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+
+                    fetch('../api/save_settings.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            'site_title': siteTitle,
+                            'contact_email': contactEmail,
+                            'theme_color': themeColor
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                        } else {
+                            alert('Error: ' + (data.error || 'Unknown error'));
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error saving settings: ' + error.message);
+                    });
+                });
+
+                // Load current settings on page load
+                window.addEventListener('DOMContentLoaded', () => {
+                    fetch('../api/get_settings.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success && data.settings) {
+                            document.getElementById('site-title').value = data.settings.site_title || '';
+                            document.getElementById('contact-email').value = data.settings.contact_email || '';
+                            document.getElementById('theme-color').value = data.settings.theme_color || '#124076';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading settings:', error);
+                    });
+                });
+            </script>
         </div>
     </main>
 </body>

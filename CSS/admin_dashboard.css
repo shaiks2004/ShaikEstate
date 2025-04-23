@@ -14,6 +14,7 @@
   /* Sidebar Styles */
   .sidebar {
     width: 220px;
+<<<<<<< HEAD
     background-color: #0A1931;
     color: #e4ba7a;
     min-height: 100vh;
@@ -21,6 +22,91 @@
   }
   
 /* Hide sidebar on small screens */
+=======
+    background-color: #124076;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+    color: #D4AF37;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+nav a {
+    color: #D4AF37;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #e4ba7a;
+    transition: background-color 0.3s ease;
+}
+nav a:hover {
+    background-color: #e4ba7a;
+    color: #124076;
+}
+main {
+    margin-left: 220px;
+    padding: 30px;
+    max-width: calc(100% - 220px);
+}
+h1 {
+    color: #D4AF37;
+    margin-bottom: 30px;
+}
+.dashboard-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.widget {
+    background-color: #E3F2FD;
+    padding: 20px;
+    flex: 1 1 200px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ac835d;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transition: background-color 0.3s ease;
+}
+.widget:hover {
+    background-color: #e4ba7a;
+    color: #124076;
+    cursor: pointer;
+}
+.widget h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.widget p {
+    font-size: 2rem;
+    margin: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #E3F2FD;
+    color: #124076;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ac835d;
+    text-align: left;
+    vertical-align: middle;
+}
+th {
+    background-color: #D4AF37;
+    color: #124076;
+}
+.content {
+    background: #E3F2FD;
+    padding: 20px;
+    border-radius: 10px;
+    color: #124076;
+}
+>>>>>>> d40cfb9ba797fba8fd0c549ecf2fb288c92c8633
 @media (max-width: 768px) {
     .sidebar {
       display: none;
@@ -41,5 +127,30 @@
     .toggle-btn {
       display: none;
     }
+<<<<<<< HEAD
   }
   
+=======
+    .dashboard-widgets {
+        flex-direction: column;
+    }
+    .widget {
+        flex: 1 1 auto;
+    }
+}
+
+section {
+    margin: 20px 0;
+}
+
+section h2 {
+    color: #D4AF37;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #E3F2FD;
+    color: #124076;
+}
+>>>>>>> d40cfb9ba797fba8fd0c549ecf2fb288c92c8633
