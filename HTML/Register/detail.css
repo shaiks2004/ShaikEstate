@@ -1,0 +1,60 @@
+/* ...existing code... */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+button[type="submit"] {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 400px;
+}
+
+button[type="submit"]:hover {
+    background-color: darkblue;
+}
+.city1{
+  margin-right: 200px;
+}
+.terms {
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .radio-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .radio-group label {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+ .error-text{
+    margin-right: 100%;
+    font-size: 16px;
+}
+.error{
+    margin-right: 100%;  
+    width: 400px;
+    height: 30px;
+}

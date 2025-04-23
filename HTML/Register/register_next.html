@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New User Registration - RealEstateIndia</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
+    <form class="registration-form">
+      <h2>New User Registration</h2>
+      <p>Create an Account to Avail the Best Real Estate Solutions</p>
+
+      <div class="radio-group">
+        <label>I am</label>
+        <label><input type="radio" name="role"> Buyer/Owner/Tenant</label>
+        <label><input type="radio" name="role"> Agent</label>
+        <label><input type="radio" name="role"> Builder</label>
+        <label><input type="radio" name="role"> Other</label>
+      </div>
+
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="password" placeholder="Password" required class="error">
+      <small class="error-text">Enter Your Password</small>
+
+      <div class="mobile-group">
+        <select>
+          <option>IND (+91)</option>
+        </select>
+        <input type="tel" placeholder="Mobile" required>
+      </div>
+
+      <label class="terms">
+        <input type="checkbox" required> I agree to all the
+        <a href="#">Terms & Conditions</a>,
+        <a href="#">Privacy Policy</a> stated herein.
+      </label>
+
+      <button type="submit">CONTINUE ➞</button>
+      <p class="login-text">Already Registered? <a href="#">Login here</a></p>
+    </form>
+  </div>
+</body>
+
+</html>

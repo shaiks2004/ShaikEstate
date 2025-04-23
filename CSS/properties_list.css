@@ -1,0 +1,96 @@
+
+.property-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.property-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.property-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.property-item:hover {
+    transform: scale(1.05);
+    background-color: gold;
+}
+
+.property-item.selected {
+    border: 2px solid red;
+}
+
+.property-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-details {
+    padding: 15px;
+}
+
+.property-details h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.property-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.property-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.property-actions .btn-add,
+.property-actions .btn-delete {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.property-actions .btn-add {
+    background-color: #4caf50;
+    color: white;
+}
+
+.property-actions .btn-add:hover {
+    background-color: #45a049;
+}
+
+.property-actions .btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.property-actions .btn-delete:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,45 @@
+.cards {
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+  }
+  
+  .cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #124076;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 220px;
+    background-color: #0A1931;
+    color: #e4ba7a;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+      display: none;
+      position: absolute;
+      top: 56px; /* header height */
+      left: 0;
+      width: 100%;
+      background-color: #0A1931;
+      z-index: 1000;
+    }
+  
+
+  }
+
+  
+  /* Desktop */
+  @media (min-width: 769px) {
+    .toggle-btn {
+      display: none;
+    }
+  }
+  
