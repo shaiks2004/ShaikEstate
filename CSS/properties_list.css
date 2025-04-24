@@ -1,4 +1,7 @@
-
+body{
+    margin: 0;
+    padding: 0;
+}
 .property-container {
     max-width: 1200px;
     margin: 20px auto;
@@ -6,12 +9,6 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.property-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
 }
 
 .property-list {
