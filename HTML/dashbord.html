@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="dash.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo"><strong>Dashboard</strong></div>
+    <div class="tabs">
+      <!-- <a href="#">Properties</a> -->
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Properties</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a>Manage Properties</a>
+          <a>Post Properties</a>
+        </div>
+      </div>
+      <a href="#">Enquiries</a>
+      <a href="#">Property Leads</a>
+      <a href="#">More</a>
+    </div>
+    <button class="post-btn">+ Post Property</button>
+  </div>
+
+  <div class="dashboard">
+    <h3>Your Business Insights</h3>
+    <div class="line">
+    </div> <br>
+    <div class="insight-boxes">
+      <div class="box red">
+        <div class="more">More Info</div>
+        <div class="info"><i class="fas fa-envelope"></i> New Enquiries</div>
+        <div class="count">00/00</div>
+      </div>
+      <div class="box blue">
+        <div class="more">More Info</div>
+        <div class="info"><i class="fas fa-building"></i> Property for Sale</div>
+        <div class="count">00</div>
+      </div>
+      <div class="box green">
+        <div class="more">More Info</div>
+        <div class="info"><i class="fas fa-download"></i> Property for Rent</div>
+        <div class="count">00</div>
+      </div>
+      <div class="box orange">
+        <div class="more">More Info</div>
+        <div class="info"><i class="fas fa-building"></i> Recommended Leads</div>
+        <div class="count">00</div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="card">
+        <h4>Latest Enquiries</h4>
+        <div class="empty-state"><i class="fas fa-info-circle"></i><br>No Enquiry Found</div>
+      </div>
+      <div class="card">
+        <h4>Property Buyers</h4>
+        <div class="empty-state"><i class="fas fa-info-circle"></i><br>No Property Leads Found</div>
+      </div>
+      <div class="card">
+        <h4>My Property Stats</h4>
+        <ul class="property-stats">
+          <li>Total Property listing Limit <span class="badge bg-gray">02</span></li>
+          <li>Active Property Sale <span class="badge bg-green">00</span></li>
+          <li>Active Property Rent+PG <span class="badge bg-green">00</span></li>
+          <li>Waiting for Approval Property <span class="badge bg-red">00</span></li>
+          <li>Deleted Property <span class="badge bg-yellow">00</span></li>
+          <li>Incomplete Property <span class="badge bg-blue">00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

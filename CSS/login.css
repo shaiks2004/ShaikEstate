@@ -179,7 +179,11 @@ body {
     color:#e4ba7a;
     
 }
+.join a{
+    list-style: none;
+    text-decoration: none;
 
+}
 .modal-overlay {
     display: none; /* Hidden by default */
     position: fixed;
