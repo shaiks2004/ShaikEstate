@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/footer.css">
 </head>
-
 <body>
-
     <!-- Header Copied from header.html for sample using-->
     <header class="Mainhead">
         <nav class="navigator">
@@ -34,16 +32,20 @@
     </header>
     <!-- here oour code main code goess -->
     <header class="hero">
-
         <div class="hero-content">
             <h1>We help people find their dream house</h1>
             <p>Search by apartment, location, or price</p>
+    
             <div class="search-bar">
-                <input type="text" placeholder="Search here">
-                <button><i class="fas fa-search " style="color: #ffff;"></i></button>
+                <div class="search-container"> <!-- NEW container for relative positioning -->
+                    <input type="text" placeholder="Search here" id="search-input" oninput="showSuggestions()">
+                    <button><i class="fas fa-search" style="color: #ffff;"></i></button>
+                    <ul id="suggestions" class="suggestions-list"></ul>
+                </div>
             </div>
         </div>
     </header>
+    
 
     <!-- Stats Section -->
     <section class="stats">
@@ -197,6 +199,7 @@
             setInterval(autoScroll, 10); // Adjust interval speed
         });
     </script>
+    <script src="../JavaScript/suggestions.js"></script>
 </body>
 
 </html>

@@ -44,7 +44,7 @@
         <a href="#">Privacy Policy</a> stated herein.
       </label>
 
-      <button type="submit">CONTINUE ➞</button>
+      <button type="submit" onclick="register_secondPage">CONTINUE ➞</button>
       <p class="login-text">Already Registered? <a href="../login.html">Login here</a></p>
     </form>
   </div>
@@ -59,6 +59,12 @@
             .then(res => res.text())
             .then(data => document.getElementById("footer-placeholder").innerHTML = data);
         });
+      </script>
+
+      <script>
+        function register_secondPage() {
+          window.location.href = "../HTML/Register/register_home.html";
+        } 
       </script>
 </body>
 

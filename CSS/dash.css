@@ -1,13 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f4f4;
-}
+*{
+  padding: 0;
+margin: 0;
+box-sizing: border-box;}
 
 .navbar {
   display: flex;
   align-items: center;
-  background: #007bff;
+  background: #0C1325;
   padding: 10px;
   color: white;
 }
@@ -26,8 +25,8 @@ body {
 
 .post-btn {
   margin-left: auto;
-  background: #28a745;
-  color: white;
+  background: #f10303;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -152,17 +151,14 @@ body {
 }
 
 .dropbtn {
-   background-color: #3498DB;
-    color: white;
+    color: #ac835d;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
   }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #75b1f149;
-  }
+
 
 .dropdown {
   position: relative;
@@ -172,23 +168,18 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  background-color: #f7f7f7;
+ 
+
 }
 
 .dropdown-content a {
-  color: black;
+  color:#ac835d;
   padding: 10px 9px;
-  text-decoration: none;
+  
   display: block;
 }
 
-.dropdown a:hover {
-  background-color: #ddd;
-}
 
 .show {
   display: block;
