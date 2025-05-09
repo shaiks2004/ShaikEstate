@@ -2,8 +2,27 @@ section {
     margin: 20px 0;
 }
 
+.visual{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: #E3F2FD;
+    border-radius: 10px;
+    color: #124076;
+    font-weight: bold;
+    height: 300px;
+
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);   
+
+
+}
 section h2 {
-    color: #D4AF37;
+    color: #e4ba7a;
 }
 
 table {
@@ -14,14 +33,14 @@ table {
 }
 
 body {
-    background-color: #0A1931;
+    background-color: #ffffff;
     color: #635c5c;
     font-family: Arial, sans-serif;
     margin: 0;
 }
 header {
-    background-color: #124076;
-    color: #D4AF37;
+    background-color: #0A1931;
+    color: #e4ba7a;
     padding: 20px;
     text-align: center;
     font-size: 2rem;
@@ -29,19 +48,19 @@ header {
 }
 nav {
     width: 220px;
-    background-color: #124076;
+    background-color: #0A1931;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 80px;
-    color: #D4AF37;
+    color: #e4ba7a;
     font-weight: bold;
     display: flex;
     flex-direction: column;
 }
 nav a {
-    color: #D4AF37;
+    color: #e4ba7a;
     padding: 15px 20px;
     text-decoration: none;
     border-bottom: 1px solid #e4ba7a;
@@ -57,7 +76,7 @@ main {
     max-width: calc(100% - 220px);
 }
 h1 {
-    color: #D4AF37;
+    color: #e4ba7a;
     margin-bottom: 30px;
 }
 .dashboard-widgets {
@@ -104,7 +123,7 @@ th, td {
     vertical-align: middle;
 }
 th {
-    background-color: #D4AF37;
+    background-color: #e4ba7a;
     color: #124076;
 }
 .content {
@@ -140,7 +159,7 @@ section {
 }
 
 section h2 {
-    color: #D4AF37;
+    color: #e4ba7a;
 }
 
 table {

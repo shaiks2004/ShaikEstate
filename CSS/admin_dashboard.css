@@ -14,15 +14,6 @@
   /* Sidebar Styles */
   .sidebar {
     width: 220px;
-<<<<<<< HEAD
-    background-color: #0A1931;
-    color: #e4ba7a;
-    min-height: 100vh;
-    padding: 1rem;
-  }
-  
-/* Hide sidebar on small screens */
-=======
     background-color: #124076;
     height: 100vh;
     position: fixed;
@@ -106,7 +97,6 @@ th {
     border-radius: 10px;
     color: #124076;
 }
->>>>>>> d40cfb9ba797fba8fd0c549ecf2fb288c92c8633
 @media (max-width: 768px) {
     .sidebar {
       display: none;
@@ -127,10 +117,6 @@ th {
     .toggle-btn {
       display: none;
     }
-<<<<<<< HEAD
-  }
-  
-=======
     .dashboard-widgets {
         flex-direction: column;
     }
@@ -153,4 +139,3 @@ table {
     background: #E3F2FD;
     color: #124076;
 }
->>>>>>> d40cfb9ba797fba8fd0c549ecf2fb288c92c8633
