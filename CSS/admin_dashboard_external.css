@@ -1,43 +1,9 @@
-section {
-    margin: 20px 0;
-}
-
-.visual{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 20px;
-    background: #E3F2FD;
-    border-radius: 10px;
-    color: #124076;
-    font-weight: bold;
-    height: 300px;
-
-    width: 100%;
-    max-width: 1200px;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);   
-
-
-}
-section h2 {
-    color: #e4ba7a;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #E3F2FD;
-    color: #124076;
-}
-
 body {
     background-color: #ffffff;
-    color: #635c5c;
-    font-family: Arial, sans-serif;
+    padding: 0;
     margin: 0;
 }
+
 header {
     background-color: #0A1931;
     color: #e4ba7a;
@@ -45,46 +11,58 @@ header {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 20px;
+    /* Adds gap after the Admin Dashboard header */
 }
+
 nav {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 15px;
+    margin: 10x;
+    /* Adds spacing between nav items */
     width: 220px;
     background-color: #0A1931;
+    color: #e4ba7a;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 80px;
-    color: #e4ba7a;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
 }
-nav a {
-    color: #e4ba7a;
-    padding: 15px 20px;
-    text-decoration: none;
-    border-bottom: 1px solid #e4ba7a;
-    transition: background-color 0.3s ease;
+
+
+
+
+nav a:active {
+    background-color: #1e3b6a;
+    /* Change background to gold on click */
+    color: #ffffff;
+    /* Change text color to white on click */
+    transition: background-color 0.1s ease, color 0.1s ease;
+    /* Faster transition for click effect */
 }
-nav a:hover {
-    background-color: #e4ba7a;
-    color: #124076;
-}
+
 main {
     margin-left: 220px;
     padding: 30px;
     max-width: calc(100% - 220px);
 }
+
 h1 {
     color: #e4ba7a;
     margin-bottom: 30px;
 }
+
 .dashboard-widgets {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 40px;
 }
+
 .widget {
     background-color: #E3F2FD;
     padding: 20px;
@@ -96,62 +74,49 @@ h1 {
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
     transition: background-color 0.3s ease;
 }
+
 .widget:hover {
     background-color: #e4ba7a;
     color: #124076;
     cursor: pointer;
 }
+
 .widget h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
+
 .widget p {
     font-size: 2rem;
     margin: 0;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #E3F2FD;
-    color: #124076;
-}
-th, td {
-    padding: 10px;
-    border: 1px solid #ac835d;
-    text-align: left;
-    vertical-align: middle;
-}
-th {
-    background-color: #e4ba7a;
-    color: #124076;
-}
-.content {
-    background: #E3F2FD;
+
+.visual {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
     color: #124076;
+    font-weight: bold;
+    height: 300px;
+    width: 100%;
+    max-width: 1200px;
 }
-@media (max-width: 768px) {
-    nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding-top: 10px;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    main {
-        margin-left: 0;
-        padding: 20px 10px;
-        max-width: 100%;
-    }
-    .dashboard-widgets {
-        flex-direction: column;
-    }
-    .widget {
-        flex: 1 1 auto;
-    }
+
+.visual img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.chart-container h3 {
+    margin: 10px;
+    padding: 10px;
+
 }
 
 section {
@@ -167,4 +132,49 @@ table {
     border-collapse: collapse;
     background: #E3F2FD;
     color: #124076;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ac835d;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #e4ba7a;
+    color: #124076;
+}
+
+.content {
+    background: #E3F2FD;
+    padding: 20px;
+    border-radius: 10px;
+    color: #124076;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 10px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px 10px;
+        max-width: 100%;
+    }
+
+    .dashboard-widgets {
+        flex-direction: column;
+    }
+
+    .widget {
+        flex: 1 1 auto;
+    }
 }
