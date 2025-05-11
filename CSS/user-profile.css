@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .form-container {
+    background: white;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    flex: 1;
+    padding: 10px 15px;
+    background: #e0e0e0;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .tab:hover {
+    background: #d0d0d0;
+  }
+  
+  .tab.active {
+    background: #007BFF;
+    color: white;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  
+  .radio-group {
+    margin-bottom: 20px;
+  }
+  
+  .radio-group label {
+    margin-right: 15px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input.verified {
+    border: 2px solid green;
+  }
+  
+  .whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form1-container{
+    display: flex;
+    
+    flex-direction: column;
+    gap: 10px;
+  }
