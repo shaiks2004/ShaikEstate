@@ -26,32 +26,33 @@ if (empty($password) || (empty($email) && empty($phone))) {
     exit;
 }
 
-try {
-    if (!empty($email)) {
-        $stmt = $pdo->prepare("SELECT user_id, password FROM user WHERE email = ?");
-        $stmt->execute([$email]);
-    } else {
-        $stmt = $pdo->prepare("SELECT user_id, password FROM user WHERE mobile = ?");
-        $stmt->execute([$phone]);
-    }
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$user || !password_verify($password, $user['password'])) {
-        http_response_code(401);
-        echo json_encode(['error' => 'Invalid credentials']);
-        exit;
-    }
-
-    // Set session or token here
-    
-    // Set cookie for 7 days
-    setcookie('user_id', $user['user_id'], time() + (7 * 24 * 60 * 60), "/", "", false, true);
-    $_SESSION['user_id'] = $user['user_id'];
-
-    echo json_encode(['success' => 'Login successful']);
-} catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+if (!empty($email)) {
+    $email_escaped = mysqli_real_escape_string($mysqli, $email);
+    $query = "SELECT user_id, password FROM user WHERE email = '$email_escaped'";
+} else {
+    $phone_escaped = mysqli_real_escape_string($mysqli, $phone);
+    $query = "SELECT user_id, password FROM user WHERE mobile = '$phone_escaped'";
 }
+
+$result = mysqli_query($mysqli, $query);
+
+if (!$result) {
+    http_response_code(500);
+    echo json_encode(['error' => mysqli_error($mysqli)]);
+    exit;
+}
+
+$user = mysqli_fetch_assoc($result);
+
+if (!$user || !password_verify($password, $user['password'])) {
+    http_response_code(401);
+    echo json_encode(['error' => 'Invalid credentials']);
+    exit;
+}
+
+// Set cookie for 7 days
+setcookie('user_id', $user['user_id'], time() + (7 * 24 * 60 * 60), "/", "", false, true);
+$_SESSION['user_id'] = $user['user_id'];
+
+echo json_encode(['success' => 'Login successful']);
 ?>
