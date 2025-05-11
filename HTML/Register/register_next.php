@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +16,21 @@
 </head>
 
 <body>
-  <div id="header-placeholder"></div>
+  <div id="header-placeholder">
+     <header class="Mainhead">
+        <nav class="navigator">
+            <a href="#"><img src="../../IMAGES/logo.png" alt="ShaikEstate" class="logo" id="header-logo"></a>
+            <ul class="nav-menu">
+                <li><a href="#" class="navs">Home</a></li>
+                <li><a href="#" class="navs">Features</a></li>
+               
+                <li><a href="#" class="navs">Projects</a></li>
+                <li><a href="#" class="navs">About</a></li>
+                <li><a href="#" class="navs">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  </div>
 
   <div class="container">
     <form class="registration-form" id="registerForm" method="POST" action="../../api/register_user.php">
@@ -52,9 +71,9 @@
   <div class="footer-placeholder"></div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-          fetch("../../components/header.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("header-placeholder").innerHTML = data);
+          // fetch("../../components/header.html")
+          //   .then(res => res.text())
+          //   .then(data => document.getElementById("header-placeholder").innerHTML = data);
 
           fetch("../../components/footer.html")
             .then(res => res.text())

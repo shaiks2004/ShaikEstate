@@ -53,7 +53,6 @@ if (!in_array($type, $valid_types)) {
 
 // Set default values for status and agent_id
 $status = 'For Sale';
-$agent_id = null; // Default agent_id set to null to avoid foreign key constraint violation
 
 // Removed logging for cleaner operation
 
@@ -81,8 +80,8 @@ if (!empty($_FILES['images']) && is_array($_FILES['images']['name'])) {
 
 try {
     // Insert property with status and agent_id
-    $stmt = $pdo->prepare("INSERT INTO property (address, price, bedrooms, bathrooms, area_sqft, property_type, status, town_id, agent_id, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())");
-    $stmt->execute([$address, $price, $bedrooms, $bathrooms, $area_sqft, $type, $status, $town_id, $agent_id]);
+    $stmt = $pdo->prepare("INSERT INTO property (address, price, bedrooms, bathrooms, area_sqft, property_type, status, town_id,  createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?,  ?, NOW(), NOW())");
+    $stmt->execute([$address, $price, $bedrooms, $bathrooms, $area_sqft, $type, $status, $town_id,]);
     $property_id = $pdo->lastInsertId();
 
     // Insert images if any

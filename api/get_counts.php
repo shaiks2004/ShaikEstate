@@ -7,7 +7,7 @@ try {
     // Get counts from tables
     $counts = [];
 
-    $tables = ['user', 'property', 'agent', 'town'];
+    $tables = ['user', 'property', 'town'];
     foreach ($tables as $table) {
         $stmt = $pdo->query("SELECT COUNT(*) as count FROM $table");
         $row = $stmt->fetch(PDO::FETCH_ASSOC);

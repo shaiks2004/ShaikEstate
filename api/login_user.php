@@ -44,10 +44,10 @@ try {
     }
 
     // Set session or token here
-    $_SESSION['user_id'] = $user['user_id'];
-
+    
     // Set cookie for 7 days
     setcookie('user_id', $user['user_id'], time() + (7 * 24 * 60 * 60), "/", "", false, true);
+    $_SESSION['user_id'] = $user['user_id'];
 
     echo json_encode(['success' => 'Login successful']);
 } catch (PDOException $e) {
