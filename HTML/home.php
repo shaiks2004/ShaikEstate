@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +31,7 @@
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
                 <div class="naver-menu" >
                  <img src="../IMAGES/user.png" alt="user" class="img">
-                <li><a href="/HTML/login.html"><li class="list">Sign in <br> Join Free</li></a></li>
+                <li><a href="./login.php"><li class="list111" id="user_name">Sign in <br> Join Free </a></li></li>
             </div>
             </ul>
         </nav>
@@ -203,5 +206,16 @@
     </script>
     <script src="../JavaScript/suggestions.js"></script>
 </body>
+ <?php
+session_start();
 
+if (isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+    $user_name = $_COOKIE['user_name'];
+    echo "<script>document.getElementById('user_name').innerHTML = 'Welcome <br>$user_name';</script>";
+}
+else{
+    echo "<script>document.getElementById('user_name').innerHTML = '<a href=\"./login.php\">Sign in <br> Join Free </a>';</script>";
+}
+?> 
 </html>
