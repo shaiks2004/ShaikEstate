@@ -340,6 +340,40 @@ button {
     color: black !important;
 }
 
+.naver-menu .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the user icon */
+    left: 0;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 150px;
+}
+
+.naver-menu .dropdown-menu a {
+    display: block;
+    color: #0A1931; /* Dark Blue */
+    text-decoration: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.naver-menu .dropdown-menu a:hover {
+    background-color: #e4ba7a; /* Gold on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Show dropdown on hover */
+.naver-menu:hover .dropdown-menu {
+    display: block;
+}
+
 .nav-menu .img {
     width: 40px;
     height: 40px;
