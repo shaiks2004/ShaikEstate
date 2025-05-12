@@ -209,10 +209,6 @@
  <?php
 session_start();
 
-<<<<<<< HEAD:HTML/home.html
-</html>
-``` 
-=======
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
     $user_name = $_COOKIE['user_name'];
@@ -223,4 +219,3 @@ else{
 }
 ?> 
 </html>
->>>>>>> 3baa06f0a429917031b5b16d95814884d02c38a3:HTML/home.php
