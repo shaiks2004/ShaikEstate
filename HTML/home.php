@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +29,7 @@
                 <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
                 <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+<<<<<<< HEAD:HTML/home.html
                 <div class="naver-menu">
                     <img src="../IMAGES/user.png" alt="user" class="img">
                     <li class="list">Sign in <br> Join Free</li>
@@ -34,6 +38,12 @@
                         <a href="./dashboard.html">User Dashboard</a>
                     </div>
                 </div>
+=======
+                <div class="naver-menu" >
+                 <img src="../IMAGES/user.png" alt="user" class="img">
+                <li><a href="/HTML/login.html"><li class="list">Sign in <br> Join Free</li></a></li>
+            </div>
+>>>>>>> 3baa06f0a429917031b5b16d95814884d02c38a3:HTML/home.php
             </ul>
         </nav>
     </header>
@@ -207,6 +217,21 @@
     </script>
     <script src="../JavaScript/suggestions.js"></script>
 </body>
+ <?php
+session_start();
 
+<<<<<<< HEAD:HTML/home.html
 </html>
 ``` 
+=======
+if (isset($_COOKIE['user_id'])) {
+    $user_id = $_COOKIE['user_id'];
+    $user_name = $_COOKIE['user_name'];
+    echo "<script>document.getElementById('user_name').innerHTML = 'Welcome <br>$user_name';</script>";
+}
+else{
+    echo "<script>document.getElementById('user_name').innerHTML = '<a href=\"./login.php\">Sign in <br> Join Free </a>';</script>";
+}
+?> 
+</html>
+>>>>>>> 3baa06f0a429917031b5b16d95814884d02c38a3:HTML/home.php

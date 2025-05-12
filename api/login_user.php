@@ -28,10 +28,10 @@ if (empty($password) || (empty($email) && empty($phone))) {
 
 if (!empty($email)) {
     $email_escaped = mysqli_real_escape_string($mysqli, $email);
-    $query = "SELECT user_id, password FROM user WHERE email = '$email_escaped'";
+    $query = "SELECT user_id,name , password FROM user WHERE email = '$email_escaped'";
 } else {
     $phone_escaped = mysqli_real_escape_string($mysqli, $phone);
-    $query = "SELECT user_id, password FROM user WHERE mobile = '$phone_escaped'";
+    $query = "SELECT user_id,name, password FROM user WHERE mobile = '$phone_escaped'";
 }
 
 $result = mysqli_query($mysqli, $query);
@@ -52,7 +52,10 @@ if (!$user || !password_verify($password, $user['password'])) {
 
 // Set cookie for 7 days
 setcookie('user_id', $user['user_id'], time() + (7 * 24 * 60 * 60), "/", "", false, true);
-$_SESSION['user_id'] = $user['user_id'];
+setcookie('user_name', $user['name'], time() + (7 * 24 * 60 * 60), "/", "", false, true);
+$_SESSION['user_id'] = $_COOKIE['user_id'];
+$_SESSION['user_name'] = $_COOKIE["user_name"];
 
 echo json_encode(['success' => 'Login successful']);
+header('location:../HTML/home.php');
 ?>
