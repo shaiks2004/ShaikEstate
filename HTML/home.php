@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +26,6 @@
                 <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
                 <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
-<<<<<<< HEAD:HTML/home.html
                 <div class="naver-menu">
                     <img src="../IMAGES/user.png" alt="user" class="img">
                     <li class="list">Sign in <br> Join Free</li>
@@ -38,12 +34,6 @@
                         <a href="./dashboard.html">User Dashboard</a>
                     </div>
                 </div>
-=======
-                <div class="naver-menu" >
-                 <img src="../IMAGES/user.png" alt="user" class="img">
-                <li><a href="/HTML/login.html"><li class="list">Sign in <br> Join Free</li></a></li>
-            </div>
->>>>>>> 3baa06f0a429917031b5b16d95814884d02c38a3:HTML/home.php
             </ul>
         </nav>
     </header>
