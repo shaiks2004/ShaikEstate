@@ -16,16 +16,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <header>Admin Dashboard</header>
-    <nav>
-        <a href="admin_dashboard.html">Dashboard</a>
-        
-        <a href="dashboard-property.html">Properties</a>
-        <a href="dashboard-user.html">Users</a>
-        <a href="dashboard-settings.html">Settings</a>
-        <a href="../api/logout.php">Logout</a>
-=======
     <header class="text-center py-3 " style="background-color: #0A1931; color: #e4ba7a;">
         <h1 class="mb-2">Admin Dashboard</h1>
     </header>
@@ -51,7 +41,6 @@
         <a class="nav-link fw-semibold m-3 mb-3" href="logout.html">
             <i class="bi bi-box-arrow-right me-2"></i>Logout
         </a>
->>>>>>> 24450e63e8117db2efc59b3cb403cecd070c3771
     </nav>
     <main>
         <div class="bg-white p-4  mb-4">
@@ -74,27 +63,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../JavaScript/admin_dashboard.js"></script>
-    <script>
-        async function fetchCounts() {
-            try {
-                const response = await fetch('../api/get_counts.php');
-                const data = await response.json();
-                if (!response.ok) {
-                    throw new Error(data.error || 'Failed to fetch counts');
-                }
-                document.getElementById('user-count').textContent = data.user || 0;
-                document.getElementById('property-count').textContent = data.property || 0;
-                
-                document.getElementById('town-count').textContent = data.town || 0;
-            } catch (error) {
-                console.error('Error fetching counts:', error);
-                document.getElementById('dashboard-widgets').textContent = 'Failed to load data.';
-            }
-        }
-=======
         <div class="visual">
             <div class="chart-container" style="max-width: 180px; margin: 2% auto;">
                 <h3 style="text-align: center;">Property Status</h3>
@@ -104,7 +72,6 @@
                 <h3 style="text-align: center;">User Status</h3>
                 <canvas id="userStatusChart"></canvas>
             </div>
->>>>>>> 24450e63e8117db2efc59b3cb403cecd070c3771
 
         </div>
         <script src="../JavaScript/chart.js"></script>
@@ -324,85 +291,6 @@
                         }
                     }
                 }
-<<<<<<< HEAD
-            });
-        }
-
-        fetchCounts();
-        fetchUsers();
-        fetchProperties();
-        renderCharts();
-    </script>
-    <section class="users-section">
-        <h2>Users</h2>
-        <!-- Removed filter input as per user request -->
-        <table>
-            <thead>
-               
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th style="position: relative;">
-                        Role <i class="fa-solid fa-filter fa-lg filter-icon" onclick="toggleFilterInput('user-role-filter')"></i>
-                        <select id="user-role-filter" data-table-body="user-table-body" data-column-index="4" onchange="filterTableByColumn(this.id, this.getAttribute('data-table-body'), parseInt(this.getAttribute('data-column-index')))" style="display:none; position: absolute; bottom: 100%; left: 0; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; width: 140px; font-family: Arial, sans-serif; font-size: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-                            <option value="">All Roles</option>
-                            <option value="Admin">Admin</option>
-                            <!-- <option value="User">User</option> -->
-                           
-                            <option value="Buyer">Buyer</option>
-                            <option value="Seller">Seller</option>
-                        </select>
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="user-table-body">
-                <tr><td colspan="5">Loading...</td></tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="properties-section">
-        <h2>Properties</h2>
-        <table>
-            <thead>
-            
-                <tr>
-                    <th>Property ID</th>
-                    <th>Address</th>
-                    <th>Price</th>
-                    <th>Bedrooms</th>
-                    <th>Bathrooms</th>
-                    <th style="position: relative;">
-                        Type <i class="fa-solid fa-filter fa-lg filter-icon" onclick="toggleFilterInput('property-type-filter')"></i>
-                        <select id="property-type-filter" data-table-body="property-table-body" data-column-index="5" onchange="filterTableByColumn(this.id, this.getAttribute('data-table-body'), parseInt(this.getAttribute('data-column-index')))" style="display:none; position: absolute; bottom: 100%; left: 0; z-index: 10; background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 8px; width: 140px; font-family: Arial, sans-serif; font-size: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
-                            <option value="">All Types</option>
-                            <option value="Apartment">Apartment</option>
-                            <option value="House">House</option>
-                            <option value="Condo">Condo</option>
-                            <option value="Townhouse">Townhouse</option>
-                        </select>
-                    </th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="property-table-body">
-                <tr><td colspan="7">Loading...</td></tr>
-            </tbody>
-        </table>
-    </section>
-    <script>
-        function toggleFilterInput(inputId) {
-            const filterElement = document.getElementById(inputId);
-            if (filterElement.style.display === 'none' || filterElement.style.display === '') {
-                filterElement.style.display = 'block';
-                filterElement.focus();
-            } else {
-                filterElement.style.display = 'none';
-                filterElement.value = '';
-                filterTableByColumn(inputId, inputId === 'user-role-filter' ? 'user-table-body' : 'property-table-body', inputId === 'user-role-filter' ? 4 : 5);
-=======
->>>>>>> 24450e63e8117db2efc59b3cb403cecd070c3771
             }
         </script>
 </body>
