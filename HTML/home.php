@@ -28,7 +28,7 @@
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
                 <div class="naver-menu">
                     <img src="../IMAGES/user.png" alt="user" class="img">
-                    <li class="list">Sign in <br> Join Free</li>
+                    <li class="list111" id="user_name">Sign in <br> Join Free</li>
                     <div class="dropdown-menu">
                         <a href="./profile.html">User Profile</a>
                         <a href="./dashboard.html">User Dashboard</a>
