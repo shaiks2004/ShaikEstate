@@ -39,23 +39,35 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Hash password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-try {
-    // Check if email already exists
-    $stmt = $pdo->prepare("SELECT user_id FROM user WHERE email = ?");
-    $stmt->execute([$email]);
-    if ($stmt->rowCount() > 0) {
-        http_response_code(409);
-        echo json_encode(['error' => 'Email already registered']);
-        exit;
-    }
-
-    // Insert user into database
-    $stmt = $pdo->prepare("INSERT INTO user (role, name, email, password, phone, city, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())");
-    $stmt->execute([$role, $name, $email, $hashed_password, $mobile, $city]);
-
-    echo json_encode(['success' => 'User registered successfully']);
-} catch (PDOException $e) {
+// Check if email already exists
+$email_escaped = mysqli_real_escape_string($mysqli, $email);
+$query_check = "SELECT user_id FROM user WHERE email = '$email_escaped'";
+$result_check = mysqli_query($mysqli, $query_check);
+if (!$result_check) {
     http_response_code(500);
-    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+    echo json_encode(['error' => mysqli_error($mysqli)]);
+    exit;
 }
+if (mysqli_num_rows($result_check) > 0) {
+    http_response_code(409);
+    echo json_encode(['error' => 'Email already registered']);
+    exit;
+}
+
+// Insert user into database
+$role_escaped = mysqli_real_escape_string($mysqli, $role);
+$name_escaped = mysqli_real_escape_string($mysqli, $name);
+$mobile_escaped = mysqli_real_escape_string($mysqli, $mobile);
+$city_escaped = mysqli_real_escape_string($mysqli, $city);
+
+$query_insert = "INSERT INTO user (role, name, email, password, phone, city, createdAt, updatedAt) VALUES ('$role_escaped', '$name_escaped', '$email_escaped', '$hashed_password', '$mobile_escaped', '$city_escaped', NOW(), NOW())";
+
+if (!mysqli_query($mysqli, $query_insert)) {
+    http_response_code(500);
+    echo json_encode(['error' => mysqli_error($mysqli)]);
+    exit;
+}
+
+echo json_encode(['success' => 'User registered successfully']);
+
 ?>

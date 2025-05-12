@@ -53,7 +53,6 @@ if (!in_array($type, $valid_types)) {
 
 // Set default values for status and agent_id
 $status = 'For Sale';
-$agent_id = null; // Default agent_id set to null to avoid foreign key constraint violation
 
 // Removed logging for cleaner operation
 
@@ -79,24 +78,44 @@ if (!empty($_FILES['images']) && is_array($_FILES['images']['name'])) {
     }
 }
 
-try {
-    // Insert property with status and agent_id
-    $stmt = $pdo->prepare("INSERT INTO property (address, price, bedrooms, bathrooms, area_sqft, property_type, status, town_id, agent_id, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())");
-    $stmt->execute([$address, $price, $bedrooms, $bathrooms, $area_sqft, $type, $status, $town_id, $agent_id]);
-    $property_id = $pdo->lastInsertId();
+// Insert property with status and agent_id
+$stmt = mysqli_prepare($mysqli, "INSERT INTO property (address, price, bedrooms, bathrooms, area_sqft, property_type, status, town_id,  createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?,  ?, NOW(), NOW())");
+if (!$stmt) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
+    exit;
+}
 
-    // Insert images if any
-    if (!empty($uploaded_files)) {
-        $img_stmt = $pdo->prepare("INSERT INTO property_images (property_id, image_url) VALUES (?, ?)");
-        foreach ($uploaded_files as $img) {
-            $image_url = 'property_images/' . $img;
-            $img_stmt->execute([$property_id, $image_url]);
-        }
+mysqli_stmt_bind_param($stmt, "sdiisssi", $address, $price, $bedrooms, $bathrooms, $area_sqft, $type, $status, $town_id);
+
+if (!mysqli_stmt_execute($stmt)) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($stmt)]);
+    exit;
+}
+
+$property_id = mysqli_insert_id($mysqli);
+
+// Insert images if any
+if (!empty($uploaded_files)) {
+    $img_stmt = mysqli_prepare($mysqli, "INSERT INTO property_images (property_id, image_url) VALUES (?, ?)");
+    if (!$img_stmt) {
+        http_response_code(500);
+        echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
+        exit;
     }
 
-    echo json_encode(['success' => true, 'message' => 'Property added successfully']);
-} catch (PDOException $e) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+    foreach ($uploaded_files as $img) {
+        $image_url = 'property_images/' . $img;
+        mysqli_stmt_bind_param($img_stmt, "is", $property_id, $image_url);
+        if (!mysqli_stmt_execute($img_stmt)) {
+            http_response_code(500);
+            echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($img_stmt)]);
+            exit;
+        }
+    }
+    mysqli_stmt_close($img_stmt);
 }
+
+echo json_encode(['success' => true, 'message' => 'Property added successfully']);
 ?>

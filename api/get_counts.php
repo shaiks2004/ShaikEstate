@@ -3,20 +3,23 @@
 header('Content-Type: application/json');
 require_once '../config/db.php';
 
-try {
-    // Get counts from tables
-    $counts = [];
+// Get counts from tables
+$counts = [];
 
-    $tables = ['user', 'property', 'agent', 'town'];
-    foreach ($tables as $table) {
-        $stmt = $pdo->query("SELECT COUNT(*) as count FROM $table");
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $counts[$table] = (int)$row['count'];
+$tables = ['user', 'property', 'town'];
+foreach ($tables as $table) {
+    $query = "SELECT COUNT(*) as count FROM $table";
+    $result = mysqli_query($mysqli, $query);
+
+    if (!$result) {
+        http_response_code(500);
+        echo json_encode(['error' => mysqli_error($mysqli)]);
+        exit;
     }
 
-    echo json_encode($counts);
-} catch (Exception $e) {
-    http_response_code(500);
-    echo json_encode(['error' => $e->getMessage()]);
+    $row = mysqli_fetch_assoc($result);
+    $counts[$table] = (int)$row['count'];
 }
+
+echo json_encode($counts);
 ?>

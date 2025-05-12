@@ -42,11 +42,7 @@
             <option value="">Select Town</option>
           </select>
         </div>
-        <div class="col-md-6">
-          <select class="form-select" id="agent_id" name="agent_id">
-            <option value="">Select Agent (optional)</option>
-          </select>
-        </div>
+      
         <div class="col-md-6">
           <label for="images" class="form-label">Property Images</label>
           <input type="file" class="form-control" id="images" name="images[]" multiple accept="image/*" />
@@ -76,23 +72,7 @@
 
     fetchTowns();
 
-    async function fetchAgents() {
-      try {
-        const response = await fetch('../api/get_agents.php');
-        const agents = await response.json();
-        const agentSelect = document.getElementById('agent_id');
-        agents.forEach(agent => {
-          const option = document.createElement('option');
-          option.value = agent.agent_id;
-          option.textContent = `Agent ${agent.agent_id} - License: ${agent.license_number}`;
-          agentSelect.appendChild(option);
-        });
-      } catch (error) {
-        console.error('Error fetching agents:', error);
-      }
-    }
-
-    fetchAgents();
+    
   </script>
 </body>
 </html>
