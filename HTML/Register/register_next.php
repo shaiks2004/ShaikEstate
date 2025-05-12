@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </label>
 
       <button type="submit">CONTINUE ➞</button>
-      <p class="login-text">Already Registered? <a href="../login.html">Login here</a></p>
+      <p class="login-text">Already Registered? <a href="../login.php">Login here</a></p>
       </form>
   </div>
   <div class="footer-placeholder"></div>

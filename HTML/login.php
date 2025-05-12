@@ -65,8 +65,8 @@
 
             <div class="divider"><span>Not a Member Yet?</span></div>
 
-            <div class="btn-center d-flex justify-content-center align-items-center">
-               <a href="../HTML/Register/register_next.html"> <button type="button" class="submit , join">Join Free Now !</button></a>
+            <div class="btn-center d-flex justify-content-center align-items-center ">
+               <a href="../HTML/Register/register_next.php"> <button type="button" class="submit , join">Join Free Now !</button></a>
             </div>
 
         </div>
