@@ -65,6 +65,7 @@ button {
     padding: 100px 20px;
 }
 
+
 .hero-content h1 {
     font-size: 2.5rem;
 }
@@ -277,4 +278,95 @@ button {
 
 .cta-btn:hover {
     background-color: #B8860B; /* Darker Gold */
+}
+
+/* Navigation Bar */
+.navigator {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Add spacing between nav items */
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #e4ba7a; /* Gold */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* User Section */
+.naver-menu {
+    display: flex;
+    align-items: center;
+    color: black;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 5px 15px;
+    list-style: none;
+    cursor: pointer;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+.naver-menu li{
+    color: black;
+}
+.list{
+    list-style: none;
+    color: black;
+    
+}
+
+.nav-menu .img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-menu .flit2 {
+    font-size: 14px;
+    color: #0A1931; /* Dark Blue */
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav-menu .flit2:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design for Navigation */
+@media (max-width: 768px) {
+    .navigator {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px; /* Reduce spacing for smaller screens */
+    }
+
+    .naver-menu {
+        align-self: flex-end; /* Align user section to the right */
+    }
 }
