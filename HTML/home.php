@@ -19,7 +19,7 @@
     <!-- Header Copied from header.html for sample using-->
     <header class="Mainhead">
         <nav class="navigator">
-            <a href="#"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
+            <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
             <ul class="nav-menu">
                 <li><a href="../HTML/home.html" class="navs">Home</a></li>
                 <li><a href="../HTML/Features.html" class="navs">Features</a></li>
@@ -196,42 +196,42 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>About ShaikEstate</h3>
-                <p>We help you find the best properties at the best prices. Whether you're looking for a new home or an
-                    investment, we’ve got you covered.</p>
+                <p>We help you find the best properties at the best prices. Whether you're looking for a new home or an investment, we’ve got you covered.</p>
             </div>
-
+    
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3 style="margin-left: 25px;">Quick Links</h3>
                 <ul>
-                    <li><a href="#" class="navs">Home</a></li>
-                    <li><a href="#" class="navs">Features</a></li>
-                    <li><a href="#" class="navs">Projects</a></li>
-                    <li><a href="#" class="navs">About</a></li>
-                    <li><a href="#" class="navs">Contact</a></li>
+              
+                    <li><a href="../HTML/home.html" class="navs">Home</a></li>
+                    <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+        
+                    <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
+                    <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
+                    <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
                 </ul>
             </div>
-
+    
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Your City</p>
                 <p><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</p>
                 <p><i class="fas fa-envelope"></i> info@shaikestate.com</p>
             </div>
-
+    
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/athaulla_athu_01_/?hl=en"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/REMarketingTips"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/athaulla_athu_01_/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/athaulla_athu_01_/?hl=en"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
-
+    
         <div class="footer-bottom">
-            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
-                    href="terms.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
         </div>
     </footer>
     <script>

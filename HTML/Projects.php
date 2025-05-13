@@ -20,13 +20,12 @@
 
 <header class="Mainhead">
     <nav class="navigator">
-        <a href="#"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
+        <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
         <ul class="nav-menu">
             <li><a href="../HTML/home.php" class="navs">Home</a></li>
             <li><a href="../HTML/Features.html" class="navs">Features</a></li>
-            <li><a href="../HTML/Agents.html" class="navs">Agents</a></li>
             <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
-            <li><a href="#" class="navs">About</a></li>
+            <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
             <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
         </ul>
     </nav>
@@ -130,7 +129,6 @@ while ($row = mysqli_fetch_assoc($query)) {
                 <ul>
                     <li><a href="../HTML/home.html" class="navs">Home</a></li>
                     <li><a href="../HTML/Features.html" class="navs">Features</a></li>
-                    <li><a href="../HTML/Agents.html" class="navs">Agents</a></li>
                     <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
                     <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
                     <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>

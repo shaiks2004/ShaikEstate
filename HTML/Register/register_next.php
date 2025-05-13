@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div id="header-placeholder">
     <header class="Mainhead">
       <nav class="navigator">
-        <a href="#"><img src="../../IMAGES/logo.png" alt="ShaikEstate" class="logo" id="header-logo" /></a>
+        <a href="../HTML/home.php"><img src="../../IMAGES/logo.png" alt="ShaikEstate" class="logo" id="header-logo" /></a>
         <ul class="nav-menu">
           <li><a href="#" class="navs">Home</a></li>
           <li><a href="#" class="navs">Features</a></li>

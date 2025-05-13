@@ -1,10 +1,229 @@
 @import url(https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400&display=swap);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css);
 
+/* General Styles */
 body {
-  font-family: "Baloo Bhai 2";
-  background: #151f29;
-  min-height: 100vh;
+   
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4 {
+    color: #0A1931;
+}
+
+/* Header Section */
+.about-header {
+    background-color: #061123;
+    color: #e4ba7a;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: slide-in 1s ease-out;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    animation: fade-in 1.5s ease-out;
+}
+
+/* Keyframes for Header Animations */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 20px;
+}
+
+/* About Section Image */
+.about-section img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+   
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure proper alignment */
+}
+
+/* Team Section */
+.team-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+}
+
+.team-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-section p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Values Section */
+.values-section {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.values-icon {
+    font-size: 3rem;
+    color: #10225c;
+    margin-bottom: 15px;
+}
+
+.values-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.values-section p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Timeline Section */
+.timeline-section {
+    background: url('../IMAGES/journey1.jpg') no-repeat center center; /* Add the journey image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    padding: 50px 20px;
+    position: relative;
+    color: #ffffff; /* Set text color to white for better contrast */
+}
+
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text visibility */
+    z-index: 1;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #D4AF37; /* Gold color for the heading */
+    position: relative;
+    z-index: 2; /* Ensure the heading is above the overlay */
+}
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 800px;
+    z-index: 2; /* Ensure the timeline is above the overlay */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #D4AF37; /* Gold Line */
+    z-index: 2;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 50%;
+    text-align: left;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-left: 0;
+    padding-right: 50%;
+    text-align: right;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #D4AF37; /* Gold Circle */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #0A1931;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+.about-footer {
+    background-color: #0A1931;
+    color: #e4ba7a;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
 }
 
 :root {
@@ -164,4 +383,16 @@ main {
 
 .collapsed main {
   left: calc(var(--collapsed-width) + 20px);
+}
+
+/* Animation Styles */
+.animated-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

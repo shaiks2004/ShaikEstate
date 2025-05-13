@@ -41,6 +41,7 @@
 
 /* Quick Links */
 .footer-section ul {
+    margin-left:25px ;
     list-style: none;
     padding: 0;
 }

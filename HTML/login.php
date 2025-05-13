@@ -20,7 +20,7 @@
     <!-- Header -->
     <header class="Mainhead">
         <nav class="navigator">
-            <a href="#"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
+            <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
             <div class="flit">
                 <ul class="nav-menu">
                     <img src="../IMAGES/user.png" alt="user" class="img">
