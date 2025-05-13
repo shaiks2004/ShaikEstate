@@ -23,7 +23,7 @@
             <ul class="nav-menu">
                 <li><a href="../HTML/home.html" class="navs">Home</a></li>
                 <li><a href="../HTML/Features.html" class="navs">Features</a></li>
-                <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
+                <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
                 <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
                 <div class="naver-menu">
