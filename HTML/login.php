@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<!-- 
+
     <!-- Header -->
     <header class="Mainhead">
         <nav class="navigator">
@@ -30,7 +30,7 @@
                 </ul>
             </div>
         </nav>
-    </header> -->
+    </header>
 
     <!-- Breadcrumbs -->
     <section>
