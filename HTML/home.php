@@ -26,13 +26,10 @@
                 <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
                 <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
                 <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
-                <div class="naver-menu">
+                <div class="naver-menu" id="naver-menu">
                     <img src="../IMAGES/user.png" alt="user" class="img">
                     <li class="list111" id="user_name">Sign in <br> Join Free</li>
-                    <div class="dropdown-menu">
-                        <a href="./profile.html">User Profile</a>
-                        <a href="./dashboard.html">User Dashboard</a>
-                    </div>
+                    
                 </div>
             </ul>
         </nav>
@@ -61,7 +58,17 @@
         <div class="stat-item"><strong>1.2K</strong> Properties Sold</div>
         <div class="stat-item"><strong>15 Towns</strong> Coverage</div>
     </section>
-
+<div class="dropdown-menu1" id="dropdown-menu1">
+                      <!-- <div class="profile userdropdown">
+                        <a href="./profile.html">User Profile</a>
+                      </div> -->
+                      <div class="dashboard userdropdown">
+                          <a href="./dashbord.html">Dashboard</a>
+                      </div>
+                      <div class="logout userdropdown">
+                        <a href="../api/logout.php">Logout</a>
+                      </div>
+                    </div>
     <section class="services">
         <h2>What we offer to our customers?</h2>
         <div class="service-cards">
@@ -206,6 +213,7 @@
         });
     </script>
     <script src="../JavaScript/suggestions.js"></script>
+    <script src="../JavaScript/popup.js"></script>
 </body>
  <?php
 session_start();
