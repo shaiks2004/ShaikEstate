@@ -32,8 +32,11 @@
 $result = mysqli_query($mysqli, $query);
 $query2 = "SELECT town_id,name FROM `town` WHERE name LIKE '%{$_POST['selector']}%';";
 $result2 = mysqli_query($mysqli, $query2);
+
+
 $array_towns = array();
 while ($row = mysqli_fetch_assoc($result2)) {
+    
     $row1 = array(); // Create a new row
 
     $array_towns[] = $row; // Add row to the matrix
@@ -44,10 +47,15 @@ a={$json_data}
 console.log( a);</script>";
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $property_id = $row['property_id'];
+        $query3 = "SELECT * FROM `property_images` WHERE property_id = {$row['property_id']}";
+$result3 = mysqli_query($mysqli, $query3);
+$row3 = mysqli_fetch_assoc($result3);
+$property_id = $row['property_id'];
 
         // Display property details
         echo "<div class='property-card'>";
+
+        echo "<img src='../" . $row3['image_url'] . "' alt='Property Image' class='property-image'>";
         foreach ($array_towns as $town) {
             if ($town['town_id'] == $row['town_id']) {
                 echo "<h3>" . $town['name'] . "</h3>";

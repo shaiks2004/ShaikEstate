@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -216,7 +219,7 @@
     <script src="../JavaScript/suggestions.js"></script>
     <!-- <script src="../JavaScript/popup.js"></script> -->
      <?php
-session_start();
+
 
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
