@@ -25,7 +25,8 @@ foreach ($required_fields as $field) {
         http_response_code(400);
         echo json_encode(['error' => "Missing required field: $field"]);
             echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-        header('Location: ../HTML/dashbord.php');
+       
+                header('Refresh:1,url=../HTML/dashbord.php');
         exit;
     }
 }
@@ -86,7 +87,7 @@ if (!$stmt) {
     http_response_code(500);
     echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
     echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-    header('Location: ../HTML/dashbord.php');
+         header('Refresh:1,url=../HTML/dashbord.php');
     exit;
 }
 
@@ -97,7 +98,7 @@ if (!mysqli_stmt_execute($stmt)) {
     echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($stmt)]);
         echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
 
-    header('Location: ../HTML/dashbord.php');
+          header('Refresh:1,url=../HTML/dashbord.php');
     exit;
 }
 
@@ -110,8 +111,7 @@ if (!empty($uploaded_files)) {
         http_response_code(500);
         echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
             echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-
-        header('Location: ../HTML/dashbord.php');
+       header('Refresh:1,url=../HTML/dashbord.php');
         exit;
     }
 
@@ -123,7 +123,7 @@ if (!empty($uploaded_files)) {
             echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($img_stmt)]);
                 echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
 
-            header('Location: ../HTML/dashbord.php');
+                header('Refresh:1,url=../HTML/dashbord.php');
             exit;
         }
     }
@@ -133,5 +133,5 @@ if (!empty($uploaded_files)) {
 echo json_encode(['success' => true, 'message' => 'Property added successfully']);
     echo "<script>alert('property added succesfully');</script>";
 
-header('Location: ../HTML/dashbord.php');
+header('Refresh:1,url=../HTML/dashbord.php');
 ?>

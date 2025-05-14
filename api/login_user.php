@@ -11,20 +11,16 @@
 </html>
 <?php
 session_start();
-header('Content-Type: application/json');
-
 // Set session user_id from cookie if available
 if (isset($_COOKIE['user_id']) && !isset($_SESSION['user_id'])) {
     $_SESSION['user_id'] = $_COOKIE['user_id'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
+    // http_response_code(405);
     echo json_encode(['error' => 'Method not allowed']);
         echo "<script>alert('Error');</script>";
-
-        delay(2000);
-        header('Location: ../HTML/login.php');
+      header('Refresh:1,url=../HTML/login.php');
 
     exit;
 }
@@ -37,10 +33,10 @@ $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 
 if (empty($password) || (empty($email) && empty($phone))) {
-    http_response_code(400);
+    // http_response_code(400);
     echo json_encode(['error' => 'Please provide email or phone and password']);
         echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-                header('Location: ../HTML/login.php');
+              header('Refresh:1,url=../HTML/login.php');
 
 
     exit;
@@ -57,10 +53,10 @@ if (!empty($email)) {
 $result = mysqli_query($mysqli, $query);
 
 if (!$result) {
-    http_response_code(500);
+    // http_response_code(500);
     echo json_encode(['error' => mysqli_error($mysqli)]);
         echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-                header('Location: ../HTML/login.php');
+              header('Refresh:1,url=../HTML/login.php');
 
 
     exit;
@@ -69,10 +65,12 @@ if (!$result) {
 $user = mysqli_fetch_assoc($result);
 
 if (!$user || !password_verify($password, $user['password'])) {
-    http_response_code(401);
+    // http_response_code(401);
     echo json_encode(['error' => 'Invalid credentials']);
         echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
-                header('Location: ../HTML/login.php');
+    
+
+                header('Refresh:1,url=../HTML/login.php');
 
 
     exit;
@@ -87,5 +85,5 @@ $_SESSION['user_name'] = $_COOKIE["user_name"];
 echo json_encode(['success' => 'Login successful']);
     echo "<script>alert('login succesfull ');</script>";
 
-header('location:../HTML/home.php');
+                header('Refresh:1,url=../HTML/home.php');
 ?>
