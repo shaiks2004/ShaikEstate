@@ -24,8 +24,52 @@
 
     <section>
         <div class="display_properties">
-            <h1>No properties are uploaded yet </h1>
-        </div>
+            <?php
+            if(isset($_POST['selector'])) {
+                // $property_id = $_POST['property_id'];
+                 require_once '../config/db.php';
+           $query = "SELECT * FROM property WHERE town_id = (select town_id from town where name LIKE '%{$_POST['selector']}%') ;";
+$result = mysqli_query($mysqli, $query);
+$query2 = "SELECT town_id,name FROM `town` WHERE name LIKE '%{$_POST['selector']}%';";
+$result2 = mysqli_query($mysqli, $query2);
+$array_towns = array();
+while ($row = mysqli_fetch_assoc($result2)) {
+    $row1 = array(); // Create a new row
+
+    $array_towns[] = $row; // Add row to the matrix
+}
+$json_data = json_encode($array_towns);
+echo "<script>
+a={$json_data}
+console.log( a);</script>";
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $property_id = $row['property_id'];
+
+        // Display property details
+        echo "<div class='property-card'>";
+        foreach ($array_towns as $town) {
+            if ($town['town_id'] == $row['town_id']) {
+                echo "<h3>" . $town['name'] . "</h3>";
+                break;
+            }
+        }
+        echo "<p>" . $row['property_type'] . "</p>";
+        echo "<p>Location: " . $row['address'] . "</p>";
+        echo "<p>Price: " . $row['price'] . "</p>";
+        echo "</div>";
+    }
+} else {
+    echo "<h1>No properties are uploaded yet </h1>";
+}
+
+            } else {
+                echo "<h1>Property ID not provided</h1>";
+                exit;
+            }
+         
+?>
+            </div>
     </section>
  <footer class="footer">
         <div class="footer-container">

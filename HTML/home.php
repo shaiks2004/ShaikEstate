@@ -92,15 +92,16 @@
         <div class="hero-content">
             <h1>We help people find their dream house</h1>
             <p>Search by apartment, location, or price</p>
-    
+    <form action="../HTML/display_properties.php" method="POST">
             <div class="search-bar">
                 <div class="search-container"> <!-- NEW container for relative positioning -->
-                    <input type="text" placeholder="Search here" id="search-input" oninput="showSuggestions()">
+                    <input type="text" name="selector" placeholder="Search here" id="search-input" oninput="showSuggestions()">
                     <button><i class="fas fa-search" style="color: #ffff;"></i></button>
                     <ul id="suggestions" class="suggestions-list"></ul>
                 </div>
             </div>
-        </div>
+            </form>
+            </div>
     </header>
     
 
