@@ -92,11 +92,11 @@
                 <h3>Quick Links</h3>
                 <ul>
 
-                    <li><a href="../HTML/home.html" class="navs">Home</a></li>
-                    <li><a href="../HTML/Features.html" class="navs">Features</a></li>
-                    <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
-                    <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                    <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                    <li><a href="../HTML/home.php" class="navs">Home</a></li>
+                    <li><a href="../HTML/Features.php" class="navs">Features</a></li>
+                    <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
+                    <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                    <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
                 </ul>
             </div>
 

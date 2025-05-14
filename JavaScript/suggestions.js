@@ -107,6 +107,23 @@ function showSuggestions() {
         suggestionsList.style.display = 'none';
     }
 }
+
+let profile_button = document.getElementById('logged-in');
+
+let profile_box = document.getElementById('profile-box');
+
+let pflag = true;
+
+profile_button.addEventListener('click',function(){
+    if(pflag){
+        profile_box.style = 'display : none';
+        pflag = false
+    }else{
+        profile_box.style = 'display : block';
+        pflag = true
+    }
+})
+
 /*
     Tirupati:[
        //tirpathi

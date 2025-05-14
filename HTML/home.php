@@ -15,73 +15,24 @@
     <link rel="stylesheet" href="../CSS/footer.css">
 </head>
 <body>
-    <!-- Header Copied from header.html for sample using-->
+    <!-- Header Copied from header.php for sample using-->
     <header class="Mainhead">
         <nav class="navigator">
             <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
             <ul class="nav-menu">
-                <li><a href="../HTML/home.html" class="navs">Home</a></li>
-                <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+                <li><a href="../HTML/home.php" class="navs">Home</a></li>
+                <li><a href="../HTML/Features.php" class="navs">Features</a></li>
                 <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
-                <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
-                <div class="naver-menu" >
-                 <img src="../IMAGES/user.png" alt="user" class="img">
-
-                 <?php 
-                    session_start();
-                    if($_SESSION['user_name']){
-                        echo "<style>
-                            .logged-out{
-                                display:none;
-                            }
-                        </style>";
-
-                        $host = 'localhost';
-                        $dbname = 'shaikestate';
-                        $username = 'root';
-                        $password = '';
-                        $name = $_SESSION['user_name'];
-
-                        $mysqli = mysqli_connect($host, $username, $password, $dbname);
-
-                        $sql = " SELECT * FROM `user` WHERE `name` = '$name' ";
-
-                        $res = mysqli_query($mysqli,$sql);
-
-                        $row = mysqli_fetch_assoc($res);
-
-                        
-                        $phone = $row['phone'];
-
-                        $role = $row['role'];
-
-                        $email = $row['email'];
-
-                    }else{
-                        echo "<style>
-                        .logged-in{
-                        display:none;
-                        }
-                    </style>";
-                    }
-                 ?>
-
-
-
-                <li class="list logged-in" id="logged-in" type="button" style="user-select:none">View<br>Profile</li>
-
-                <li><a href="login.php"><li class="list logged-out">Sign in<br>Join Free</li></a></li>
-            </div>
+                <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
+                <div class="naver-menu" id="naver-menu">
+                    <img src="../IMAGES/user.png" alt="user" class="img">
+                    <li class="list111" id="user_name">Sign in <br> Join Free</li>
+                    
+                </div>
             </ul>
         </nav>
-        <div class="profile-box" id="profile-box">
-            <h2>Profile Info</h2>
-            <p><strong>Name:</strong> <?=$_SESSION['user_name']?></p>
-            <p><strong>Phone:</strong> <?=$row['phone']?></p>
-            <p><strong>Role:</strong> <?=$row['role']?></p>
-            <p><strong>Email:</strong> <?=$row['email']?></p>
-        </div>
+     
 
     </header>
     <!-- here oour code main code goess -->
@@ -89,15 +40,16 @@
         <div class="hero-content">
             <h1>We help people find their dream house</h1>
             <p>Search by apartment, location, or price</p>
-    
+    <form action="../HTML/display_properties.php" method="POST">
             <div class="search-bar">
                 <div class="search-container"> <!-- NEW container for relative positioning -->
-                    <input type="text" placeholder="Search here" id="search-input" oninput="showSuggestions()">
+                    <input type="text" name="selector" placeholder="Search here" id="search-input" oninput="showSuggestions()">
                     <button><i class="fas fa-search" style="color: #ffff;"></i></button>
                     <ul id="suggestions" class="suggestions-list"></ul>
                 </div>
             </div>
-        </div>
+            </form>
+            </div>
     </header>
     
 
@@ -108,7 +60,17 @@
         <div class="stat-item"><strong>1.2K</strong> Properties Sold</div>
         <div class="stat-item"><strong>15 Towns</strong> Coverage</div>
     </section>
-
+<div class="dropdown-menu1" id="dropdown-menu1">
+                      <!-- <div class="profile userdropdown">
+                        <a href="./profile.php">User Profile</a>
+                      </div> -->
+                      <div class="dashboard userdropdown">
+                          <a href="./dashbord.php">Dashboard</a>
+                      </div>
+                      <div class="logout userdropdown">
+                        <a href="../api/logout.php">Logout</a>
+                      </div>
+                    </div>
     <section class="services">
         <h2>What we offer to our customers?</h2>
         <div class="service-cards">
@@ -124,7 +86,6 @@
             <div class="card">Upto User Radius</div>
         </div>
     </section>
-
 
     <!-- Featured Properties -->
     <section class="featured">
@@ -172,7 +133,7 @@
         </div>
         <div class="view-more">
             <li>
-                <a href="../HTML/Projects.html" class="view-more-btn">
+                <a href="../HTML/Projects.php" class="view-more-btn">
                     View More Features <i class="bi bi-arrow-right"></i>
                 </a>
             </li>
@@ -202,12 +163,12 @@
                 <h3 style="margin-left: 25px;">Quick Links</h3>
                 <ul>
               
-                    <li><a href="../HTML/home.html" class="navs">Home</a></li>
-                    <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+                    <li><a href="../HTML/home.php" class="navs">Home</a></li>
+                    <li><a href="../HTML/Features.php" class="navs">Features</a></li>
         
-                    <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
-                    <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                    <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                    <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
+                    <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                    <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
                 </ul>
             </div>
     
@@ -230,7 +191,7 @@
         </div>
     
         <div class="footer-bottom">
-            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms & Conditions</a></p>
         </div>
     </footer>
     <script>
@@ -253,6 +214,7 @@
         });
     </script>
     <script src="../JavaScript/suggestions.js"></script>
+    <script src="../JavaScript/popup.js"></script>
 </body>
  <?php
 session_start();
@@ -267,67 +229,3 @@ else{
 }
 ?> 
 </html>
-
-
-
-
-
-
-<!-- paste css and js code in the files -->
-<!-- home.css -->
-<style>
-    .profile-box {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 250px;
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        font-family: Arial, sans-serif;
-        z-index: 1000;
-        user-select: none; /* Prevents text selection */
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none;     /* IE/Edge */
-    }
-
-    .profile-box h2 {
-        margin-top: 0;
-        font-size: 18px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 5px;
-    }
-
-    .profile-box p {
-        margin: 8px 0;
-        font-size: 14px;
-        color: #333;
-    }
-
-    .profile-box strong {
-        color: #555;
-    }
-</style>
-
-<!-- sugessions.js -->
-<script>
-
-let profile_button = document.getElementById('logged-in');
-
-let profile_box = document.getElementById('profile-box');
-
-let pflag = true;
-
-profile_button.addEventListener('click',function(){
-    if(pflag){
-        profile_box.style = 'display : none';
-        pflag = false
-    }else{
-        profile_box.style = 'display : block';
-        pflag = true
-    }
-})
-
-</script>

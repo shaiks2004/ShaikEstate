@@ -65,7 +65,7 @@
             <div class="divider"><span>Not a Member Yet?</span></div>
 
             <div class="btn-center d-flex justify-content-center align-items-center">
-                <button type="submit" class="submit , join"><a href="../HTML/Register/register_next.html">Join Free Now !</a></button>
+                <button type="submit" class="submit , join"><a href="../HTML/Register/register_next.php">Join Free Now !</a></button>
             </div>
 
         </div>
@@ -110,11 +110,11 @@
             <ul>
           
                 <li><a href="../HTML/home.php" class="navs">Home</a></li>
-                <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+                <li><a href="../HTML/Features.php" class="navs">Features</a></li>
               
                 <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
-                <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
             </ul>
         </div>
 
@@ -137,7 +137,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+        <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms & Conditions</a></p>
     </div>
     <script>
      

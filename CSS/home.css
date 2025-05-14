@@ -344,7 +344,7 @@ button {
      /* Hidden by default */
      position: absolute;
      right:2%;
-     top:0%;
+     top:20%;
     background-color: #ffffff;
     width:20%;
     display:none;
@@ -437,3 +437,36 @@ text-align: center;
         align-self: flex-end; /* Align user section to the right */
     }
 }
+   .profile-box {
+        position: fixed;
+        top: 110px;
+        right: 20px;
+        width: 250px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        font-family: Arial, sans-serif;
+        z-index: 1000;
+        user-select: none; /* Prevents text selection */
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none;     /* IE/Edge */
+    }
+
+    .profile-box h2 {
+        margin-top: 0;
+        font-size: 18px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+
+    .profile-box p {
+        margin: 8px 0;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .profile-box strong {
+        color: #555;
+    }
