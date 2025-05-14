@@ -31,7 +31,7 @@
 
                  <?php 
                     session_start();
-                    if($_SESSION['user_name']){
+                    if(isset($_SESSION['user_name'])){
                         echo "<style>
                             .logged-out{
                                 display:none;
@@ -72,10 +72,11 @@
 
                 <li class="list logged-in" id="logged-in" type="button" style="user-select:none">View<br>Profile</li>
 
-                <li><a href="login.php"><li class="list logged-out">Sign in<br>Join Free</li></a></li>
+                <li><a href="login.php"><li class="list logged-out" id="user_name">Sign in<br>Join Free</li></a></li>
             </div>
             </ul>
         </nav>
+        <?php if(isset($_SESSION['user_name'])){ ?>
         <div class="profile-box" id="profile-box">
             <h2>Profile Info</h2>
             <p><strong>Name:</strong> <?=$_SESSION['user_name']?></p>
@@ -83,6 +84,7 @@
             <p><strong>Role:</strong> <?=$row['role']?></p>
             <p><strong>Email:</strong> <?=$row['email']?></p>
         </div>
+        <?php } ?>
 
     </header>
     <!-- here oour code main code goess -->
