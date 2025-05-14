@@ -215,18 +215,20 @@
         });
     </script>
     <script src="../JavaScript/suggestions.js"></script>
-    <script src="../JavaScript/popup.js"></script>
-</body>
- <?php
+    <!-- <script src="../JavaScript/popup.js"></script> -->
+     <?php
 session_start();
 
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
     $user_name = $_COOKIE['user_name'];
     echo "<script>document.getElementById('user_name').innerHTML = 'Welcome <br>$user_name';</script>";
+    echo " <script src=\"../JavaScript/popup.js\"></script>";
+
 }
 else{
     echo "<script>document.getElementById('user_name').innerHTML = '<a href=\"./login.php\">Sign in <br> Join Free </a>';</script>";
-}
-?> 
+}?>
+
+</body>
 </html>
