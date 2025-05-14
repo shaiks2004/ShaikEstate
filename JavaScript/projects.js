@@ -1,5 +1,5 @@
 function feature1() {
-    window.location.href = "../HTML/Aboutus.html"; 
+    window.location.href = "../HTML/Aboutus.php"; 
 }
 
 function toggleInfo() {

@@ -9,10 +9,10 @@
 <body>
     <header>Admin Dashboard - Settings</header>
     <nav>
-        <a href="admin_dashboard.html">Dashboard</a>
-        <a href="dashboard-property.html">Properties</a>
-        <a href="dashboard-user.html">Users</a>
-        <a href="dashboard-settings.html">Settings</a>
+        <a href="admin_dashboard.php">Dashboard</a>
+        <a href="dashboard-property.php">Properties</a>
+        <a href="dashboard-user.php">Users</a>
+        <a href="dashboard-settings.php">Settings</a>
         <a href="../api/logout.php">Logout</a>
     </nav>
     <main>

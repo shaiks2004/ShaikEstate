@@ -17,10 +17,10 @@
   <div class="d-flex">
     <!-- Sidebar -->
     <nav class="flex-column p-3 min-vh-100" style="width: 220px; background-color: #0A1931; color: #e4ba7a;">
-      <a class="nav-link fw-semibold p-3 mb-2" href="./admin_dashboard.html"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
-      <a class="nav-link fw-semibold p-3 mb-2" href="./dashboard-property.html"><i class="bi bi-building me-2"></i>Properties</a>
-      <a class="nav-link fw-semibold p-3 mb-2" href="./dashboard-users.html"><i class="bi bi-person me-2"></i>Users</a>
-      <a class="nav-link fw-semibold p-3 mb-2" href="logout.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+      <a class="nav-link fw-semibold p-3 mb-2" href="./admin_dashboard.php"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+      <a class="nav-link fw-semibold p-3 mb-2" href="./dashboard-property.php"><i class="bi bi-building me-2"></i>Properties</a>
+      <a class="nav-link fw-semibold p-3 mb-2" href="./dashboard-users.php"><i class="bi bi-person me-2"></i>Users</a>
+      <a class="nav-link fw-semibold p-3 mb-2" href="../../api/logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
     </nav>
     <main>
         <h1>Users List</h1>

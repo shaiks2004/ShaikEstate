@@ -18,16 +18,16 @@
         </button>
     </div>
     <nav class="flex-column min-vh-100" style="width: 220px;">
-        <a class="nav-link fw-semibold  m-3 mb-3" href="admin_dashboard.html">
+        <a class="nav-link fw-semibold  m-3 mb-3" href="admin_dashboard.php">
             <i class="bi bi-speedometer2 me-2"></i>Dashboard
         </a>
-        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-agent.html">
+        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-agent.php">
             <i class="bi bi-people me-2"></i>Agents
         </a>
-        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-property.html">
+        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-property.php">
             <i class="bi bi-building me-2"></i>Properties
         </a>
-        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-user.html">
+        <a class="nav-link fw-semibold m-3 mb-3" href="dashboard-user.php">
             <i class="bi bi-person me-2"></i>Users
         </a>
         <a class="nav-link fw-semibold m-3 mb-3" href="../api/logout.php">

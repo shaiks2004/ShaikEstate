@@ -18,10 +18,10 @@
             <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
             <ul class="nav-menu">
                 <li><a href="../HTML/home.php" class="navs">Home</a></li>
-                <li><a href="../HTML/Features.html" class="navs">Features</a></li>
+                <li><a href="../HTML/Features.php" class="navs">Features</a></li>
                 <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
-                <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -195,10 +195,10 @@
             setInterval(scrollFeatures, 3000);
         });
         function Bhk1(){
-            window.location.href="../HTML/1bhk.html";
+            window.location.href="../HTML/1bhk.php";
         }
         function Bhk1(){
-            window.location.href="../HTML/1bhk.html";
+            window.location.href="../HTML/1bhk.php";
         }
     </script>
     
@@ -215,11 +215,11 @@
                 <h3>Quick Links</h3>
                 <ul>
 
-                    <li><a href="../HTML/home.html" class="navs">Home</a></li>
-                    <li><a href="../HTML/Features.html" class="navs">Features</a></li>
-                    <li><a href="../HTML/Projects.html" class="navs">Projects</a></li>
-                    <li><a href="../HTML/Aboutus.html" class="navs">About</a></li>
-                    <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                    <li><a href="../HTML/home.php" class="navs">Home</a></li>
+                    <li><a href="../HTML/Features.php" class="navs">Features</a></li>
+                    <li><a href="../HTML/Projects.php" class="navs">Projects</a></li>
+                    <li><a href="../HTML/Aboutus.php" class="navs">About</a></li>
+                    <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
                 </ul>
             </div>
 
@@ -242,8 +242,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
-                    href="terms.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a
+                    href="terms.php">Terms & Conditions</a></p>
         </div>
     </footer>
 </body>

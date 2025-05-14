@@ -18,7 +18,7 @@
             <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
             <ul class="nav-menu">
 
-                <li><a href="../HTML/Contanctus.html" class="navs">Contact</a></li>
+                <li><a href="../HTML/Contanctus.php" class="navs">Contact</a></li>
             </nav>
     </header>
 
@@ -109,8 +109,8 @@ if ($result && mysqli_num_rows($result) > 0) {
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
-                    href="terms.html">Terms & Conditions</a></p>
+            <p>&copy; 2025 ShaikEstate. All rights reserved. | <a href="privacy.php">Privacy Policy</a> | <a
+                    href="terms.php">Terms & Conditions</a></p>
         </div>
     </footer>
 </body>

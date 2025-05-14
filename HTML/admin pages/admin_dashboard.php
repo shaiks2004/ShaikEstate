@@ -21,18 +21,18 @@
   <div class="d-flex">
     <!-- Sidebar -->
     <nav class="flex-column p-3 min-vh-100" style="width: 220px; background-color: #0A1931; color: #e4ba7a;">
-        <a class="nav-link fw-semibold  mb-2" href="admin_dashboard.html" style="color: #e4ba7a;">
+        <a class="nav-link fw-semibold  mb-2" href="admin_dashboard.php" style="color: #e4ba7a;">
           <i class="bi bi-speedometer2 me-2"></i>Dashboard
         </a>
         
-        <a class="nav-link fw-semibold mb-2" href="dashboard-property.html" style="color: #e4ba7a;">
+        <a class="nav-link fw-semibold mb-2" href="dashboard-property.php" style="color: #e4ba7a;">
           <i class="bi bi-building me-2"></i>Properties
         </a>
-        <a class="nav-link fw-semibold mb-2" href="dashboard-user.html" style="color: #e4ba7a;">
+        <a class="nav-link fw-semibold mb-2" href="dashboard-user.php" style="color: #e4ba7a;">
           <i class="bi bi-person me-2"></i>Users
         </a>
       
-        <a class="nav-link fw-semibold" href="logout.html" style="color: #e4ba7a;">
+        <a class="nav-link fw-semibold" href="../../api/logout.php" style="color: #e4ba7a;">
           <i class="bi bi-box-arrow-right me-2"></i>Logout
         </a>
       </nav>

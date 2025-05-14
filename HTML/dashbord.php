@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <button class="post-btn">+ Post Property</button>
+    <a href="./add_property.php"><button class="post-btn">+ Post Property</button></a>
   </div>
 
   <div class="dashboard">

@@ -44,13 +44,10 @@
     color: #FFD700; /* Gold Hover Effect */
 }
 
-.naver-menu:hover + #dropdown-menu1,
-.naver-menu:hover ~ #dropdown-menu1 {
-    display: block;
-}
+
 
 #dropdown-menu1 {
-    display: none;
+    /* display: none; */
     position: absolute;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
