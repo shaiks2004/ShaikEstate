@@ -50,6 +50,7 @@
             <option value="Land">Land</option>
             <option value="Farm">Farm</option>
             <option value="Commercial">Commercial</option>
+               <option value="PG">Pg</option>
           </select>
         </div>
         <div class="col-md-6">

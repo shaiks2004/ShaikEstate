@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/Contactus.css">
     <link rel="stylesheet" href="../css/login.css">
-    <script>
-        function login() {
-            document.getElementById("section-1").style.filter = "blur(5px)";
-            document.getElementById("section-2").style.filter = "blur(5px)";
-            document.getElementById("login_click").style.display ="block";
-        }
-    </script>
+
 </head>
 
 <body>
@@ -25,14 +19,14 @@
     <header class="Mainhead">
         <nav class="navigator">
             <a href="../HTML/home.php"><img src="../IMAGES/logo.png" alt="ShaikEstate" class="logo"></a>
-            <div class="flit">
+            <!-- <div class="flit">
                 <ul class="nav-menu " onclick="register(event)">
                     <img src="../IMAGES/user.png" alt="user" class="img">
                     <div class="flit2" onclick="login()">
                         <li>Sign in <br> Join Free</li>
                     </div>
                 </ul>
-            </div>
+            </div> -->
         </nav>
     </header>
 

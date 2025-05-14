@@ -24,6 +24,8 @@ foreach ($required_fields as $field) {
     if (empty($_POST[$field])) {
         http_response_code(400);
         echo json_encode(['error' => "Missing required field: $field"]);
+            echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
+        header('Location: ../HTML/dashbord.php');
         exit;
     }
 }
@@ -83,6 +85,8 @@ $stmt = mysqli_prepare($mysqli, "INSERT INTO property (address, price, bedrooms,
 if (!$stmt) {
     http_response_code(500);
     echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
+    echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
+    header('Location: ../HTML/dashbord.php');
     exit;
 }
 
@@ -91,6 +95,9 @@ mysqli_stmt_bind_param($stmt, "sdiisssi", $address, $price, $bedrooms, $bathroom
 if (!mysqli_stmt_execute($stmt)) {
     http_response_code(500);
     echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($stmt)]);
+        echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
+
+    header('Location: ../HTML/dashbord.php');
     exit;
 }
 
@@ -102,6 +109,9 @@ if (!empty($uploaded_files)) {
     if (!$img_stmt) {
         http_response_code(500);
         echo json_encode(['error' => 'Prepare failed: ' . mysqli_error($mysqli)]);
+            echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
+
+        header('Location: ../HTML/dashbord.php');
         exit;
     }
 
@@ -111,6 +121,9 @@ if (!empty($uploaded_files)) {
         if (!mysqli_stmt_execute($img_stmt)) {
             http_response_code(500);
             echo json_encode(['error' => 'Execute failed: ' . mysqli_stmt_error($img_stmt)]);
+                echo "<script>alert('Error: " . mysqli_error($mysqli) . "');</script>";
+
+            header('Location: ../HTML/dashbord.php');
             exit;
         }
     }
@@ -118,4 +131,7 @@ if (!empty($uploaded_files)) {
 }
 
 echo json_encode(['success' => true, 'message' => 'Property added successfully']);
+    echo "<script>alert('property added succesfully');</script>";
+
+header('Location: ../HTML/dashbord.php');
 ?>
