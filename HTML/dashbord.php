@@ -17,7 +17,7 @@
         <button onclick="toggleDropdown('dropdown1')" class="dropbtn">Properties</button>
         <div id="dropdown1" class="dropdown-content">
           <a href="#">Manage Properties</a>
-          <a href="#">Post Properties</a>
+          <a href="./add_property.php">Post Properties</a>
         </div>
       </div>
       <a href="#">Enquiries</a>
@@ -36,7 +36,7 @@
         <button onclick="toggleDropdown('dropdown3')" class="dropbtn">More</button>
         <div id="dropdown3" class="dropdown-content">
           <a href="#">My Requirement</a>
-          <a href="#">Post Requirement</a>
+          <a href="./add_property.php">Post Requirement</a>
           <a href="#">Requirement Solution</a>
           <a href="#">My Subscription</a>
         </div>
@@ -53,22 +53,22 @@
       <div class="box red">
         <div class="more">More Info</div>
         <div class="info"><i class="fas fa-envelope"></i> New Enquiries</div>
-        <div class="count">00/00</div>
+        <div class="count">29/100</div>
       </div>
       <div class="box blue">
         <div class="more">More Info</div>
         <div class="info"><i class="fas fa-building"></i> Property for Sale</div>
-        <div class="count">00</div>
+        <div class="count">24</div>
       </div>
       <div class="box green">
         <div class="more">More Info</div>
         <div class="info"><i class="fas fa-download"></i> Property for Rent</div>
-        <div class="count">00</div>
+        <div class="count">24</div>
       </div>
       <div class="box orange">
         <div class="more">More Info</div>
         <div class="info"><i class="fas fa-building"></i> Recommended Leads</div>
-        <div class="count">00</div>
+        <div class="count">20</div>
       </div>
     </div>
 
@@ -84,13 +84,15 @@
       <div class="card">
         <h4>My Property Stats</h4>
         <ul class="property-stats">
-          <li>Total Property Listing Limit <span class="badge bg-gray">02</span></li>
-          <li>Active Property Sale <span class="badge bg-green">00</span></li>
-          <li>Active Property Rent + PG <span class="badge bg-green">00</span></li>
-          <li>Waiting for Approval Property <span class="badge bg-red">00</span></li>
-          <li>Deleted Property <span class="badge bg-yellow">00</span></li>
-          <li>Incomplete Property <span class="badge bg-blue">00</span></li>
+          <li>Total Property Listing Limit <span class="badge bg-gray" id="total-listing">00</span></li>
+          <li>Active Property Sale <span class="badge bg-green" id="active-sale">07</span></li>
+          <li>Active Property Rent + PG <span class="badge bg-green" id="active-rent">28</span></li>
+          <li>Waiting for Approval Property <span class="badge bg-red" id="waiting-approval">14</span></li>
+          <li>Deleted Property <span class="badge bg-yellow" id="deleted">00</span></li>
+          <li>Incomplete Property <span class="badge bg-blue" id="incomplete">00</span></li>
         </ul>
+        <!-- Simulate Add Property Button (for demo) -->
+        <button id="add-property-btn" style="margin-top:10px;">Add Property (Demo)</button>
       </div>
     </div>
   </div>
@@ -109,6 +111,16 @@
         }
       }
     }
+
+    // Auto-increment property stats (demo)
+    document.getElementById('add-property-btn').onclick = function () {
+      // Get current values
+      const totalListing = document.getElementById('total-listing');
+      const activeSale = document.getElementById('active-sale');
+      // Parse and increment
+      totalListing.textContent = String((parseInt(totalListing.textContent, 10) || 0) + 1).padStart(2, '0');
+      activeSale.textContent = String((parseInt(activeSale.textContent, 10) || 0) + 1).padStart(2, '0');
+    };
   </script>
 </body>
 

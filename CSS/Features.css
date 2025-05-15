@@ -5,63 +5,67 @@
     box-sizing: border-box;
 }
 
-.container{
-margin-right:0!important;
-margin-left: 0!important;
---bs-gutter-x: 0!important;}
-.conntainer{
+.container {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    --bs-gutter-x: 0 !important;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
-h6{
+
+h6 {
     margin: 25px 0;
 }
+
+/* Experts Grid */
 .experts-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 2rem; */
-  }
-  
-  .expert-card {
+}
+
+.expert-card {
     flex: 1 1 300px;
     max-width: 350px;
     text-align: center;
     padding: 1.5rem;
-  }
-  
-  /* Responsive Grid */
-  @media (max-width: 992px) {
-    .agent-card {
-      width: calc(50% - 30px);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .agent-card {
-      width: 100%;
-    }
-  }
-
-  .heading-9
-{
-  color:#bc9c80;
 }
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .expert-card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .expert-card {
+        width: 100%;
+    }
+}
+
+/* Headings */
+.heading-9 {
+    color: #bc9c80;
+}
+
+/* Features Scroll Section */
 .features-wrapper {
     overflow-x: auto;
     width: 100vw;
     margin: auto;
     padding: 20px 0;
 }
+
 .features-scroll {
     display: flex;
     gap: 20px;
     padding: 25px;
     overflow-x: auto;
     scroll-behavior: smooth;
-     background:#001f3f;
+    background: #001f3f;
 }
 
 .features-scroll::-webkit-scrollbar {
@@ -78,9 +82,7 @@ h6{
     width: 200px;
     text-align: center;
     background-color: #fff;
-    /* background: linear-gradient(to bottom, #c2cbd6, #124076); */
     padding: 15px;
-    /* background: linear-gradient(to bottom, #001f3f, #f5f5f5); */
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
@@ -89,7 +91,6 @@ h6{
     width: 100%;
     height: 200px;
     object-fit: cover;
-    /* border-radius: 10px; */
 }
 
 .feature-box p {
@@ -106,31 +107,31 @@ h6{
 
 .feature-box:hover {
     transform: scale(1.05);
-     background-color: #c49d62;
-     /* background-color: #ac835d; */
-
+    background-color: #c49d62;
 }
 
 /* Footer */
 footer {
     margin-top: 50px;
 }
+
+/* Typing Animation */
 @keyframes typing {
     from { width: 0; }
-    to { width:69%; }
+    to { width: 69%; }
 }
 
 .typing-text {
     font-size: 24px;
     font-weight: bold;
-    border-right: 3px solid rgb(164, 158, 158); 
+    border-right: 3px solid rgb(164, 158, 158);
     white-space: nowrap;
     overflow: hidden;
     width: 0;
     animation: typing 6s steps(60, end) forwards;
 }
 
-
+/* Auto Scroll Section */
 .auto-scroll-container {
     width: 100%;
     overflow: hidden;
@@ -177,14 +178,16 @@ footer {
     color: #333;
 }
 
-hr{
+hr {
     width: 80%;
     height: 3px;
     background-color: #1c2654;
     border: none;
     margin: 20px auto;
 }
-.build-feature{
+
+/* Build Feature Section */
+.build-feature {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,44 +195,41 @@ hr{
     text-align: center;
     padding: 25px;
     margin: 50px;
-
-
 }
-.build-feature img{
+
+.build-feature img {
     height: 500px;
 }
-.build-feature p{
+
+.build-feature p {
     margin-top: 10px;
-    /* padding: 20px; */
     font-size: 15px;
 }
-.texter{
-font-size: 5px;
-text-align: center;
-}
-.build-feature h1{
+
+.build-feature h1 {
     font-weight: 400;
     color: #ac835d;
-    /* color:#FFD700; */
     font-size: 40px;
     line-height: 1.1428571429em;
     letter-spacing: .05em;
-    margin: 0;
     margin: 25px 0;
+}
 
+/* Typing Box */
+.typing-box {
 
-.typing-box{
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 25px;
+    padding: 35px;
     margin: 50px;
-    background-color: #001f3f;
-    color: #fff;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 10px;
 }
-}
+
+/* Offers Section */
 .offer-box {
     display: flex;
     flex-direction: column;
@@ -240,15 +240,13 @@ text-align: center;
 }
 
 .offers {
-    /* max-width: 600px; Ensures content stays within a defined width */
     background-color: #ffffff;
     box-shadow: 0px 0px 10px #969799;
     border-radius: 15px;
     padding: 20px;
-
 }
 
-.offers h1, p {
+.offers h1, .offers p {
     margin: 10px 0;
 }
 
@@ -273,6 +271,10 @@ text-align: center;
     justify-content: center;
 }
 
+.what1 img {
+    width: 30%;
+    height: auto;
+}
 
 .py-5 { padding: 3rem 0; }
 .mb-3 { margin-bottom: 1rem; }
@@ -283,46 +285,24 @@ text-align: center;
 .text-center { text-align: center; }
 .text-muted { color: #6c757d; }
 .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
-
-.what1 img{
-    width: 30%;
-    height: auto;
-}
+/* Block Texts */
 .block {
-    color: white;
-    font-size: 20px;
-}
-
-.blocker {
-    color: #f5f5f5;
-}
-
-.block {
-    color: white;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-.blocker {
-    color: #f5f5f5;
-}
-
-.features-wrapper::-webkit-scrollbar{
-    width:0;
-}
-.features-scroll::-webkit-scrollbar
-{
-    width:0;
-}
-.block{
     color: rgb(255, 255, 255);
     font-size: 25px;
+    margin-top: 10px;
 }
-.blocker{
+
+.blocker {
     color: #c6c3c3;
+}
+
+/* Hide Scrollbars for Features */
+.features-wrapper::-webkit-scrollbar,
+.features-scroll::-webkit-scrollbar {
+    width: 0;
 }
 
